@@ -103,10 +103,15 @@ const FeaturesSection = () => {
 
         {/* Tabs Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="flex space-x-1 bg-gray-800 rounded-2xl p-1 overflow-x-auto">
+          <div
+            role="tablist"
+            className="flex space-x-1 bg-gray-800 rounded-2xl p-1 overflow-x-auto"
+          >
             {features.map((feature, index) => (
               <button
                 key={index}
+                role="tab"
+                aria-selected={activeTab === index}
                 onClick={() => setActiveTab(index)}
                 className={`relative px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ease-in-out whitespace-nowrap ${
                   activeTab === index
@@ -123,7 +128,7 @@ const FeaturesSection = () => {
         {/* Content Area */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div key={activeTab} className="space-y-6 animate-fadeInLeft">
+          <div className="space-y-6 animate-fadeInLeft">
             <h3 className="text-3xl font-bold leading-tight">
               {features[activeTab].title}
             </h3>
@@ -156,14 +161,11 @@ const FeaturesSection = () => {
 
           {/* Right Content - Image */}
           <div className="relative">
-            <div
-              key={`img-${activeTab}`}
-              className="relative overflow-hidden rounded-2xl shadow-2xl animate-fadeInRight"
-            >
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl animate-fadeInRight">
               <img
                 src={features[activeTab].img}
                 alt={features[activeTab].tab}
-                className="w-full h-80 object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+                className="w-full h-64 md:h-80 lg:h-96 object-cover transition-transform duration-700 ease-in-out hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
