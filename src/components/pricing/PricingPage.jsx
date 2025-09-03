@@ -1,325 +1,209 @@
-import React, { useState } from "react";
-import PricingSection from "./PricingSection";
-import FeaturesSection from "./FeaturesSection";
-import { Users, Globe, Shield, Zap, ArrowRight } from "lucide-react";
+// src/pages/PricingPage.jsx
+import { useState } from "react";
+import { Globe, Users, Laptop, Layers, Info, X } from "lucide-react";
 
-const companySize = [
-  { label: "1-10 people", value: "1-10", icon: Users },
-  { label: "11-50 people", value: "11-50", icon: Users },
-  { label: "51-200 people", value: "51-200", icon: Globe },
-  { label: "200+ people", value: "200+", icon: Shield },
+const companySizes = [
+  { label: "1-20 people", value: "1-20" },
+  { label: "21-200 people", value: "21-200" },
+  { label: "201-2,000 people", value: "201-2000" },
+  { label: "2,000+ people", value: "2000+" },
 ];
 
-const PricingPage = () => {
-  const [selectedSize, setSelectedSize] = useState("1-10");
+const pricingTabs = [
+  { label: "Payroll", icon: Globe },
+  { label: "HR", icon: Users },
+  { label: "IT", icon: Laptop },
+  { label: "Services", icon: Layers },
+];
 
-  return (
-    <div className="bg-gradient-to-b from-blue-100 to-white min-h-screen font-sans">
-      {/* Hero Section */}
-      <section className="relative py-28 px-6 md:px-16 text-center overflow-hidden">
-        {/* 🌊 Animated Gradient Waves */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="wave wave1"></div>
-          <div className="wave wave2"></div>
-          <div className="wave wave3"></div>
-        </div>
-
-        {/* ✨ Animated Particles */}
-        <div className="absolute inset-0 z-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="particle"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${i * 0.5}s`,
-              }}
-            ></div>
-          ))}
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-8 animate-fadeInDown">
-            <Zap className="w-4 h-4" />
-            <span>DexKor Pricing</span>
-          </div>
-
-          {/* 💡 Animated Gradient Headline */}
-          <h1 className="headline-gradient text-5xl md:text-6xl font-extrabold mb-8">
-         Clear, fair pricing that scales from startup to enterprise.
-          </h1>
-
-          <p
-            className="text-gray-600 text-xl leading-relaxed mb-12 animate-fadeInUp"
-            style={{ animationDelay: "0.2s" }}
-          >
-          Whether you’re closing deals, onboarding customers, managing support tickets, or driving renewals, you can do it all with DexKor.
-
-          </p>
-
-          {/* Company Size Selector */}
-          <div className="mb-8">
-            <p className="text-gray-700 font-semibold mb-4">
-              What is the size of your company?
-            </p>
-            <div className="flex justify-center gap-3 flex-wrap">
-              {companySize.map((size, index) => {
-                const Icon = size.icon;
-                return (
-                  <button
-                    key={size.value}
-                    onClick={() => setSelectedSize(size.value)}
-                    className={`group flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ease-in-out transform hover:scale-105 ${
-                      selectedSize === size.value
-                        ? "bg-blue-600 text-white shadow-lg"
-                        : "bg-white text-gray-700 hover:bg-gray-50 shadow-md hover:shadow-lg border border-gray-200"
-                    }`}
-                    style={{
-                      animationDelay: `${0.4 + index * 0.1}s`,
-                      animation: "fadeInUp 0.6s ease-out forwards",
-                    }}
-                  >
-                    <Icon
-                      className={`w-4 h-4 ${
-                        selectedSize === size.value
-                          ? "text-white"
-                          : "text-gray-500 group-hover:text-gray-700"
-                      }`}
-                    />
-                    <span>{size.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <PricingSection />
-
-      {/* Features Section */}
-      <FeaturesSection />
-
-      {/* Bottom CTA */}
-      <section className="relative bg-gradient-to-r from-blue-200 to-blue-400 text-white text-center py-20 px-6 overflow-hidden">
-        {/* Floating Circles */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full animate-float"></div>
-          <div
-            className="absolute bottom-10 right-10 w-24 h-24 bg-white rounded-full animate-float"
-            style={{ animationDelay: "2s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/4 w-16 h-16 bg-white rounded-full animate-float"
-            style={{ animationDelay: "1s" }}
-          ></div>
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto">
-          {/* 🔥 Gradient Heading with Wavy Motion */}
-          <h2 className="wavy-heading text-4xl md:text-5xl font-bold mb-6 text-white">
-            Find out why Deel is trusted by more than
-            <span className="text-blue-200">
-              {" "}
-              35,000 leading global companies
-            </span>
-          </h2>
-
-          <p
-            className="text-blue-50 text-lg mb-8 animate-fadeInUp"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Join thousands of companies that have transformed their global
-            workforce management with Deel
-          </p>
-          <button
-            className="group bg-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105 animate-fadeInUp flex items-center space-x-2 mx-auto"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <span className="headline-gradient">Book a Demo</span>
-            <ArrowRight className="w-5 h-5 text-blue-500 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
-        </div>
-      </section>
-
-      {/* Animations */}
-      <style jsx>{`
-        /* Fade Animations */
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeInDown {
-          animation: fadeInDown 0.6s ease-out forwards;
-        }
-        .animate-fadeInUp {
-          animation: fadeInUp 0.6s ease-out forwards;
-          opacity: 0;
-        }
-
-        /* 🌊 Waves */
-        .wave {
-          position: absolute;
-          width: 200%;
-          height: 200%;
-          background: radial-gradient(
-            circle at 50% 50%,
-            rgba(59, 130, 246, 0.15),
-            transparent 70%
-          );
-          animation: waveMove 12s infinite linear;
-          border-radius: 45%;
-        }
-        .wave1 {
-          animation-duration: 18s;
-        }
-        .wave2 {
-          animation-duration: 22s;
-          opacity: 0.7;
-        }
-        .wave3 {
-          animation-duration: 28s;
-          opacity: 0.5;
-        }
-
-        @keyframes waveMove {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-
-        /* ✨ Particles */
-        .particle {
-          position: absolute;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: radial-gradient(circle, #ffffff, transparent 70%);
-          animation: floatParticle 10s ease-in-out infinite,
-            colorShift 6s infinite alternate;
-        }
-        @keyframes floatParticle {
-          0% {
-            transform: translateY(0) scale(1);
-            opacity: 0.6;
-          }
-          50% {
-            transform: translateY(-50px) scale(1.4);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(0) scale(1);
-            opacity: 0.6;
-          }
-        }
-        @keyframes colorShift {
-          0% {
-            background: radial-gradient(circle, #3b82f6, transparent 70%);
-          }
-          25% {
-            background: radial-gradient(circle, #60a5fa, transparent 70%);
-          }
-          50% {
-            background: radial-gradient(circle, #38bdf8, transparent 70%);
-          }
-          75% {
-            background: radial-gradient(circle, #0ea5e9, transparent 70%);
-          }
-          100% {
-            background: radial-gradient(circle, #2563eb, transparent 70%);
-          }
-        }
-
-        /* Floating Circles */
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-
-        /* 🌈 Animated Gradient Headline & Button Text */
-        .headline-gradient {
-          background: linear-gradient(
-            270deg,
-            #3b82f6,
-            #60a5fa,
-            #38bdf8,
-            #0ea5e9
-          );
-          background-size: 800% 800%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: gradientFlow 10s ease infinite,
-            fadeInUp 1.2s ease-out forwards;
-          text-shadow: 0 0 20px rgba(59, 130, 246, 0.4),
-            0 0 35px rgba(96, 165, 250, 0.3), 0 0 50px rgba(14, 165, 233, 0.2);
-        }
-        @keyframes gradientFlow {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-
-        /* 🎵 Wavy Heading Animation */
-        .wavy-heading {
-          display: inline-block;
-          animation: floatWave 4s ease-in-out infinite;
-        }
-        @keyframes floatWave {
-          0% {
-            transform: translateY(0px);
-          }
-          25% {
-            transform: translateY(-6px) rotate(-1deg);
-          }
-          50% {
-            transform: translateY(3px) rotate(1deg);
-          }
-          75% {
-            transform: translateY(-4px) rotate(-1deg);
-          }
-          100% {
-            transform: translateY(0px);
-          }
-        }
-      `}</style>
-    </div>
-  );
+const bgColors = {
+  Payroll: "bg-[#CDE6FF]",
+  HR: "bg-yellow-200",
+  IT: "bg-purple-100",
+  Services: "bg-[#CDE6FF]",
 };
 
-export default PricingPage;
+const tabColors = {
+  Payroll: "bg-white border-blue-500",
+  HR: "bg-yellow-200 border-yellow-500",
+  IT: "bg-purple-200 border-purple-500",
+  Services: "bg-white border-blue-300",
+};
+
+export default function PricingPage() {
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [activeTab, setActiveTab] = useState("Payroll");
+  const [showModal, setShowModal] = useState(false);
+
+  // Handle company size click
+  const handleSizeClick = (size) => {
+    setSelectedSize(size);
+    setShowModal(true);
+  };
+
+  return (
+    <section
+      className={`w-full py-36 px-24 min-h-screen transition-colors duration-500 ${bgColors[activeTab]}`}
+    >
+      <div className="max-w-6xl mx-auto text-center">
+        {/* Small Heading */}
+        <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+          DexKor Pricing
+        </h3>
+
+        {/* Main Heading */}
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4">
+          Clear, fair pricing <br /> that scales from startup to enterprise.
+        </h1>
+
+        {/* Subtext */}
+        <p className="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+          Whether you’re closing deals, onboarding customers, managing support
+          tickets, or driving renewals, you can do it all with DexKor.
+        </p>
+
+        {/* Company size selector */}
+        <div className="mt-12 bg-white/50 px-8 py-4 rounded-2xl flex flex-wrap items-center justify-center gap-6">
+          <div className="flex items-center gap-2">
+            <p className="font-semibold text-gray-900 text-lg">
+              What is the size of your company?
+            </p>
+            <Info className="w-4 h-4 text-gray-600" />
+          </div>
+
+          <div className="flex flex-wrap gap-4">
+            {companySizes.map((size) => (
+              <button
+                key={size.value}
+                onClick={() => handleSizeClick(size.value)}
+                className={`px-6 py-3 rounded-full text-base font-medium transition
+                  ${
+                    selectedSize === size.value
+                      ? "bg-white text-gray-900 shadow-md"
+                      : "bg-gray-100 hover:bg-white/70 text-gray-800"
+                  }`}
+              >
+                {size.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Tabs */}
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+          {pricingTabs.map((tab) => {
+            const Icon = tab.icon;
+            const isActive = activeTab === tab.label;
+            return (
+              <button
+                key={tab.label}
+                onClick={() => setActiveTab(tab.label)}
+                className={`flex flex-col items-center p-6 rounded-2xl border-2 transition
+                  ${
+                    isActive
+                      ? tabColors[tab.label]
+                      : "bg-white/50 border-transparent hover:border-gray-300"
+                  }`}
+              >
+                <Icon
+                  className={`w-8 h-8 mb-3 ${
+                    isActive ? "text-gray-900" : "text-blue-600"
+                  }`}
+                />
+                <span className="font-medium text-gray-900">{tab.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-8 relative">
+            {/* Close Button */}
+            <button
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              onClick={() => setShowModal(false)}
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Headline */}
+            <h2 className="text-2xl font-bold text-gray-900">
+              See how DexKor fits your business with a custom plan
+            </h2>
+            <p className="mt-2 text-gray-600">
+              Chat with a DexKor expert to explore the platform, ask questions,
+              and get pricing personalized to your company’s size and needs.
+            </p>
+
+            {/* Ratings */}
+            <div className="flex items-center gap-2 mt-4">
+              <span className="text-red-500 text-xl">★★★★★</span>
+              <p className="text-sm text-gray-600">
+                Loved by early adopters across SaaS, D2C, and Logistics industries. <br />
+                Backed by CX leaders and powered by AI innovation.
+              </p>
+            </div>
+
+            {/* Form */}
+            <form className="mt-6 space-y-4">
+              <div className="flex gap-4">
+                <input
+                  type="text"
+                  placeholder="First name"
+                  className="flex-1 border rounded-lg px-4 py-2"
+                />
+                <input
+                  type="text"
+                  placeholder="Last name"
+                  className="flex-1 border rounded-lg px-4 py-2"
+                />
+              </div>
+              <input
+                type="email"
+                placeholder="Work email"
+                className="w-full border rounded-lg px-4 py-2"
+              />
+              <select
+                className="w-full border rounded-lg px-4 py-2"
+                defaultValue={selectedSize}
+              >
+                {companySizes.map((size) => (
+                  <option key={size.value} value={size.value}>
+                    {size.label}
+                  </option>
+                ))}
+              </select>
+              <select className="w-full border rounded-lg px-4 py-2">
+                <option>United States</option>
+                <option>India</option>
+                <option>United Kingdom</option>
+                <option>Canada</option>
+                {/* You can replace with real country list */}
+              </select>
+            </form>
+
+            {/* Footer */}
+            <p className="mt-4 text-xs text-gray-500">
+              We respect your data. By submitting this form, you agree that we
+              may contact you about DexKor’s products and services, in
+              accordance with our Privacy Policy.
+            </p>
+
+            {/* CTA */}
+            <a
+              href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 block w-full bg-black text-white font-medium py-3 rounded-lg text-center hover:bg-gray-800 transition"
+            >
+              Choose date & time
+            </a>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
