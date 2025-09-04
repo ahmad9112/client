@@ -61,7 +61,7 @@ export default function Navbar() {
       {/* Container */}
       <div
         ref={menuRef}
-        className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2"
+        className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-10 py-5"
       >
         {/* Logo → Home */}
         <div className="flex items-center gap-2 text-[#1A2B6B] font-bold text-xl">
