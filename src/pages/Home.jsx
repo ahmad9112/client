@@ -5,7 +5,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import HrFeaturesSection from "../components/HrFeaturesSection";
 import ItFeaturesSection from "../components/ItFeaturesSection";
 import ServicesFeaturesSection from "../components/ServicesFeaturesSection";
-import OfferSection from "../components/OfferSection";
+import OfferSection from "../components/OfferSection"; // ✅ Using for Dexy AI
 import GlobalHero from "../components/GlobalHero";
 import Testimonials from "../components/Testimonials";
 import ComplianceHero from "../components/Comp";
@@ -18,7 +18,8 @@ import AccountCare from "../components/AccountCare"; // ✅ Added import
 // import Footer from '../components/Footer.jsx'
 
 const Home = () => {
-  const [activeFeature, setActiveFeature] = useState("Deel Payroll"); // default tab
+  // ✅ Default to "Dexy AI"
+  const [activeFeature, setActiveFeature] = useState("Dexy AI");
 
   return (
     <div className="md:flex-row justify-between items-start gap-10 flex-1">
@@ -34,16 +35,11 @@ const Home = () => {
         />
 
         {/* Conditional Rendering */}
+        {activeFeature === "Dexy AI" && <OfferSection />}   {/* ✅ Dexy AI default */}
         {activeFeature === "SalesHub" && <HrFeaturesSection />}
-        {activeFeature === "OnboardHub" && <ItFeaturesSection />} {/* ✅ fixed typo */}
+        {activeFeature === "OnboardHub" && <ItFeaturesSection />}
         {activeFeature === "HelpDesk" && <ServicesFeaturesSection />}
-        {activeFeature === "AccountCare" && <AccountCare />} {/* ✅ fixed condition */}
-
-        {/* Default (Payroll) */}
-        {activeFeature !== "SalesHub" &&
-          activeFeature !== "OnboardHub" &&
-          activeFeature !== "HelpDesk" &&
-          activeFeature !== "AccountCare" && <OfferSection />}
+        {activeFeature === "AccountCare" && <AccountCare />}
 
         {/* Always show below every section */}
         <GlobalHero />

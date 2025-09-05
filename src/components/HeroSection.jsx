@@ -30,7 +30,7 @@ export default function HeroSection() {
   const trustedBy = [logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo3];
 
   return (
-    <section className="w-full overflow-hidden font-satoshi">
+    <section className="w-full overflow-hidden font-satoshi pt-[100px]">
       {/* Hero Section (Sky Blue background) */}
       <div
         className="relative bg-[#B5DCFF] pb-16 sm:pb-20"
