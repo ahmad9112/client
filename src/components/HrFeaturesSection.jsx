@@ -1,35 +1,35 @@
 "use client";
-import c from "../assets/c.png";
-import d from "../assets/d.png";
-import e from "../assets/e.png";
-import f from "../assets/f.png";
+import g from "../assets/g.png";
+import h from "../assets/h.png";
+import i from "../assets/i.png";
+import j from "../assets/j.png";
 
 export default function SalesHubSection() {
   const features = [
     {
       title: "Lead Management",
       desc: "Capture and qualify leads in one place with AI scoring.",
-      img: d,
+      img: g,
       layout: "text-first",
     },
     {
       title: "Pipeline Visibility",
       desc: "Track deals across stages with real-time updates.",
-      img: c,
+      img: h,
       layout: "image-first",
       centerBtn: true,
     },
     {
       title: "Collaboration Tools",
       desc: "Smooth handoff from Sales → Success → Support.",
-      img: e,
+      img: i,
       layout: "image-first",
       centerBtn: true,
     },
     {
       title: "Integrations",
       desc: "Connect with HubSpot, Salesforce, Slack, and more.",
-      img: f,
+      img: j,
       layout: "text-first",
     },
   ];

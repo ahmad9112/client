@@ -1,30 +1,30 @@
 "use client";
-import g from "../assets/g.png";
-import h from "../assets/h.png";
-import i from "../assets/i.png";
-import j from "../assets/j.png";
+import gg from "../assets/gg.png";
+import hh from "../assets/hh.png";
+import ii from "../assets/ii.png";
+import jj from "../assets/jj.png";
 
 export default function OnboardingFeaturesSection() {
   const features = [
     {
       title: "Playbook Builder",
       desc: "Set repeatable onboarding journeys.",
-      img: g,
+      img: gg,
     },
     {
       title: "Task Automation",
       desc: "Assign, track, and complete onboarding steps automatically.",
-      img: h,
+      img: hh,
     },
     {
       title: "Progress Tracking",
       desc: "Monitor onboarding status across all accounts.",
-      img: i,
+      img: ii,
     },
     {
       title: "Customer Collaboration",
       desc: "Shared checklists and portals for customers.",
-      img: j,
+      img: jj,
     },
   ];
 

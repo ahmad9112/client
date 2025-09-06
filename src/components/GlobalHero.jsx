@@ -1,5 +1,5 @@
 "use client";
-import manImg from "../assets/man.png"; // import image from assets
+import gc from "../assets/gc.png"; // import image from assets
 
 export default function GlobalHero() {
   return (
@@ -38,7 +38,7 @@ export default function GlobalHero() {
         {/* Right Section (IMAGE) */}
         <div className="flex justify-center md:justify-end">
           <img
-            src={manImg}
+            src={gc}
             alt="Hero"
             className="w-full max-w-[700px] object-contain"
           />

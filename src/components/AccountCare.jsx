@@ -1,30 +1,30 @@
 "use client";
-import a from "../assets/a.png"; // Health Scores
-import b from "../assets/b.png"; // Renewal Playbooks
-import c from "../assets/c.png"; // Alerts & Signals
-import d from "../assets/d.png"; // 360° Account View
+import cc from "../assets/cc.png"; // Health Scores
+import dd from "../assets/dd.png"; // Renewal Playbooks
+import ee from "../assets/ee.png"; // Alerts & Signals
+import ff from "../assets/ff.png"; // 360° Account View
 
 export default function CustomerSuccessSection() {
   const features = [
     {
       title: "Health Scores",
       desc: "Spot risks early with AI-driven scoring.",
-      img: a,
+      img: cc,
     },
     {
       title: "Renewal Playbooks",
       desc: "Automate renewals and expansion workflows.",
-      img: b,
+      img: dd,
     },
     {
       title: "Alerts & Signals",
       desc: "Get notified on churn risks and upsell opportunities.",
-      img: c,
+      img: ee,
     },
     {
       title: "360° Account View",
       desc: "See support, sales, and onboarding history in one place.",
-      img: d,
+      img: ff,
     },
   ];
 

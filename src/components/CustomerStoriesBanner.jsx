@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import etcImg from "../assets/etc.png"; // replace with your actual image path
+import et from "../assets/et.png"; // replace with your actual image path
 
 // Import images
 import hiringImg from "../assets/hiring.png";
@@ -12,7 +12,7 @@ import mergersImg from "../assets/mergers.png";
 const tabsData = {
   "Global Hiring": {
     img: hiringImg,
-    stat: "5,000+ contracts created",
+    stat: "💛 SalesHub – SaaS Startup",
     desc: "Turing has around 400 developers working for customers and 150 developers working to build Turing. They were able to migrate everyone to Deel in days. Now they use Deel to manage, pay, and onboard every developer, in over 60 different countries.",
   },
   "Global Payroll": {
@@ -68,11 +68,11 @@ const LandingSections = () => {
         {/* Heading */}
         <div className="text-center mb-10">
           <h2 className="text-xs md:text-sm font-semibold text-gray-500 mb-2">
-            CUSTOMER STORIES
+           Customer Stories
           </h2>
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-            We’ve helped 35,000+ companies <br className="hidden sm:block" />
-            grow and manage global teams.
+           Customer stories from teams <br className="hidden sm:block" />
+             scaling with DexKor.
           </h3>
 
           {/* Tabs */}
@@ -157,7 +157,7 @@ const LandingSections = () => {
           {/* Right: Image */}
           <div className="flex justify-center">
             <img
-              src={etcImg}
+              src={et}
               alt="Three steps illustration"
               className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-lg shadow-lg"
             />

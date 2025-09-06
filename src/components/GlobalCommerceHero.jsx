@@ -8,11 +8,11 @@ const ConnectedPlatformHero = () => {
       <img
         src={zz}
         alt="Connected platform illustration"
-        className="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none"
       />
 
       {/* Main Content aligned to left */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+      <div className="relative z-10 w-full max-w-6xl mx-auto pl-4 pr-4 sm:pl-6 sm:pr-6 md:pl-8 md:pr-6 lg:pl-12 lg:pr-6">
         <div className="max-w-2xl text-left">
           {/* Small Upper Title */}
           <p className="text-xs sm:text-sm font-semibold tracking-wide uppercase mb-3">
@@ -32,17 +32,15 @@ const ConnectedPlatformHero = () => {
             success at every stage.
           </p>
 
-          {/* CTA Button with Link */}
-     <a
-  href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-full sm:w-auto bg-black text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-800 transition text-center"
->
-  Get started
-</a>
-
-          
+          {/* CTA Button */}
+          <a
+            href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-black text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-800 transition"
+          >
+            Get started
+          </a>
         </div>
       </div>
     </section>

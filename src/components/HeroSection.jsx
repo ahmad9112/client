@@ -117,16 +117,17 @@ export default function HeroSection() {
               <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
                 Backed By
               </h3>
-              <div className="flex flex-wrap md:flex-nowrap gap-5 sm:gap-8 md:gap-10 justify-center md:justify-start">
-                {backedBy.map((logo, i) => (
-                  <img
-                    key={i}
-                    src={logo}
-                    alt={`backed-logo-${i}`}
-                    className="max-h-12 sm:max-h-14 md:max-h-16 lg:max-h-20 w-auto max-w-[150px] object-contain opacity-80 hover:opacity-100 transition"
-                  />
-                ))}
-              </div>
+         <div className="flex flex-wrap md:flex-nowrap gap-3 justify-start items-center">
+  {backedBy.map((logo, i) => (
+    <img
+      key={i}
+      src={logo}
+      alt={`backed-logo-${i}`}
+      className="max-h-12 md:max-h-14 w-auto object-contain opacity-80 hover:opacity-100 transition"
+    />
+  ))}
+</div>
+
             </div>
 
             {/* Trusted By (Scrolling, Responsive, No Cutoff) */}
