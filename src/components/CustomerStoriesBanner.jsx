@@ -9,33 +9,35 @@ import relocationImg from "../assets/relocation.png";
 import mergersImg from "../assets/mergers.png";
 
 // Tabs Data for Customer Stories
+// Tabs Data for Customer Stories
 const tabsData = {
   "Global Hiring": {
     img: hiringImg,
     stat: "💛 SalesHub – SaaS Startup",
-    desc: "Turing has around 400 developers working for customers and 150 developers working to build Turing. They were able to migrate everyone to Deel in days. Now they use Deel to manage, pay, and onboard every developer, in over 60 different countries.",
+    desc: "“With SalesHub, we finally have one place to track and prioritize leads. Deal conversions are up 25% since we stopped juggling spreadsheets.” — Ankit M., Sales Lead, SaaS Startup",
   },
   "Global Payroll": {
     img: payrollImg,
-    stat: "300+ hours saved monthly",
-    desc: "Since using Deel’s Global Payroll, Change.org has saved more than 300 hours on admin each month. They’ve also taken advantage of all the services Deel offers, including EOR to retain employees needing visa sponsorship.",
+    stat: "💙 OnboardHub – HR Tech Company",
+    desc: "“Onboarding used to take weeks. With OnboardHub playbooks and task automation, customers go live in half the time — and with less effort from our team.” — Riya S., Customer Success Manager",
   },
   "Compliance": {
     img: complianceImg,
-    stat: "100% compliance achieved",
-    desc: "With Deel’s compliance services, companies ensure full legal and regulatory adherence across multiple countries, reducing risk and saving time.",
+    stat: "💜 HelpDesk – Logistics Company",
+    desc: "“DexKor’s HelpDesk gave us SLA tracking and AI summaries out of the box. Our support costs dropped by 30% and agents save hours every week.” — Arjun K., Operations Manager",
   },
   "Employee relocation": {
     img: relocationImg,
-    stat: "1,000+ relocations managed",
-    desc: "Deel has helped global companies relocate employees smoothly, handling visas, legal paperwork, and employee support across 50+ countries.",
+    stat: "💚 AccountCare – Mid-market SaaS",
+    desc: "“We can see risks before they become churn. Health scores and alerts helped us retain two major accounts this quarter alone.” — Emily R., Head of CS",
   },
   "Mergers/Acquisitions": {
     img: mergersImg,
-    stat: "50+ mergers supported",
-    desc: "Deel provides HR & Payroll support for companies undergoing mergers and acquisitions, ensuring seamless employee transitions and compliance.",
+    stat: "🖤 Dexy AI – D2C Brand",
+    desc: "“Ask Dexy has become our internal copilot. From auto-QA to instant summaries, it’s like having an extra analyst on the team.” — Karan P., Founder & CEO",
   },
 };
+
 
 // MAIN COMPONENT
 const LandingSections = () => {
