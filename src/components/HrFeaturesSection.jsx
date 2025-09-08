@@ -51,7 +51,7 @@ export default function SalesHubSection() {
         {features.map((item, i) => (
           <div
             key={i}
-            className="bg-[#FFE585] relative overflow-hidden rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow"
+            className="bg-purple-300 relative overflow-hidden rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow"
           >
             {/* Decorative background shapes */}
             <div className="absolute top-0 right-0 w-28 h-28 sm:w-40 sm:h-40 bg-yellow-400 opacity-30 rounded-full -z-0 translate-x-6 sm:translate-x-8 -translate-y-6 sm:-translate-y-8"></div>

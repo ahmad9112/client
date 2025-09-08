@@ -1,226 +1,175 @@
-import { useState } from "react";
+"use client";
+import React, { useState } from "react";
 
-const PricingPlans = () => {
-  const [selectedProduct, setSelectedProduct] = useState("DexKor");
-
-  const plans = {
-    DexKor: {
-      starter: {
-        price: "$19.99",
-        desc: "For startups and small teams with up to 10 users",
-        features: [
-          "AI agents, assistants, and deflection",
-          "Omnichannel ticketing platform",
-          "Data migration and integrations",
-          "Ready-to-go reporting & analytics",
-        ],
-      },
-      pro: {
-        price: "$59.99",
-        desc: "Support & engagement platform for scaling orgs",
-        features: [
-          "Everything in Starter",
-          "Advanced reporting & analytics",
-          "Custom SLA and routing policies",
-          "Customizable objects and data types",
-        ],
-      },
-      ultimate: {
-        price: "Let's talk",
-        desc: "Enterprise scale & flexibility to meet any requirement",
-        features: [
-          "Everything in Pro",
-          "Unlimited integrations",
-          "Full object customization",
-          "Enterprise-grade compliance & security",
-        ],
-      },
-    },
-    Build: {
-      starter: {
-        price: "$9.99",
-        desc: "Startups and small engineering teams",
-        features: [
-          "AI agents, assistants, and issue tracking",
-          "Sprint planning and release tracking",
-          "Git integration",
-        ],
-      },
-      pro: {
-        price: "$24.99",
-        desc: "Scaling teams",
-        features: [
-          "Everything in Starter",
-          "Customizable issue management",
-          "Advanced reporting & analytics",
-        ],
-      },
-      ultimate: {
-        price: "Let's talk",
-        desc: "Enterprise scale and flexibility",
-        features: [
-          "Everything in Pro",
-          "Full object model customization",
-          "Enterprise-grade security, compliance, and controls",
-        ],
-      },
-    },
-    PlugApp: {
-      starter: {
-        price: "Free",
-        desc: "Get started with AI",
-        features: [
-          "AI powered search",
-          "GenAI powered answers",
-          "One simple SDK",
-        ],
-      },
-      pro: {
-        price: "Flexible",
-        desc: "In-app engagement & observability",
-        features: [
-          "AI powered search & deflections",
-          "In-app Agents",
-          "Product and support observability",
-        ],
-      },
-      ultimate: {
-        price: "Let's talk",
-        desc: "Advanced monitoring & insights",
-        features: [
-          "Conversion drop insights",
-          "Advanced Session Filtering",
-          "Enterprise-grade security & privacy",
-        ],
-      },
-    },
-    AgentAi: {
-      starter: {
-        price: "$19.99",
-        desc: "Small teams with up to 10 users",
-        features: [
-          "AI agents, assistants, and deflection",
-          "Omnichannel ticketing platform",
-          "Data migration and integrations",
-        ],
-      },
-      pro: {
-        price: "$59.99",
-        desc: "Support & engagement for scaling orgs",
-        features: [
-          "Everything in Starter",
-          "Advanced reporting & analytics",
-          "Custom SLA and routing policies",
-        ],
-      },
-      ultimate: {
-        price: "Let's talk",
-        desc: "Enterprise scale & flexibility",
-        features: [
-          "Unlimited integrations",
-          "Full object customization",
-          "Enterprise-grade compliance & security",
-        ],
-      },
-    },
-    DevRev: {
-      starter: {
-        price: "Free",
-        desc: "Empowering startups to scale",
-        features: [
-          "Conversational AI platform",
-          "Fewer tools, more time",
-          "Join 100+ AI-first startups",
-        ],
-      },
-      pro: null,
-      ultimate: null,
-    },
-  };
-
-  const selected = plans[selectedProduct];
+const PricingPage = () => {
+  const [activeTab, setActiveTab] = useState("Support");
 
   return (
-    <div className="mt-24 max-w-6xl mx-auto px-4">
-      {/* Product Tabs */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
-        {Object.keys(plans).map((product) => (
-          <button
-            key={product}
-            onClick={() => setSelectedProduct(product)}
-            className={`px-4 py-2 rounded-full font-medium transition ${
-              selectedProduct === product
-                ? "bg-black text-white"
-                : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+    <div className="flex min-h-screen bg-white">
+      {/* Sidebar */}
+      <div className="w-64 border-r p-6 text-sm text-gray-800">
+        <h2 className="text-lg font-semibold mb-4">Products</h2>
+        <ul className="space-y-3">
+          <li
+            onClick={() => setActiveTab("Support")}
+            className={`cursor-pointer hover:text-black ${
+              activeTab === "Support" ? "font-bold text-black" : "text-gray-600"
             }`}
           >
-            {product}
-          </button>
-        ))}
+            Support
+          </li>
+          <li
+            onClick={() => setActiveTab("Build")}
+            className={`cursor-pointer hover:text-black ${
+              activeTab === "Build" ? "font-bold text-black" : "text-gray-600"
+            }`}
+          >
+            Build
+          </li>
+        </ul>
+
+        <h2 className="text-lg font-semibold mt-6 mb-4">In-app Services</h2>
+        <ul className="space-y-3">
+          <li className="text-gray-600 cursor-pointer hover:text-black">
+            PlugApp <span className="text-green-600 text-xs ml-1">FREE</span>
+          </li>
+        </ul>
+
+        <h2 className="text-lg font-semibold mt-6 mb-4">Platform Services</h2>
+        <ul className="space-y-3">
+          <li className="text-gray-600 cursor-pointer hover:text-black">
+            360 Analytics{" "}
+            <span className="text-xs text-gray-500">Coming soon</span>
+          </li>
+          <li className="text-gray-600 cursor-pointer hover:text-black">
+            AgentOS
+          </li>
+        </ul>
+
+        <h2 className="text-lg font-semibold mt-6 mb-4">Programs</h2>
+        <ul className="space-y-3">
+          <li className="text-gray-600 cursor-pointer hover:text-black">
+            DevRev for Startups
+          </li>
+        </ul>
       </div>
 
-      {/* Heading */}
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
-        {selectedProduct === "DevRev" ? "DevRev for Startups" : "Pricing made simple"}
-      </h2>
-      <p className="mt-2 text-gray-600 text-center">
-        {selectedProduct} plans are priced per seat
-      </p>
+      {/* Right Content */}
+      <div className="flex-1 p-10">
+        <h1 className="text-3xl font-bold mb-8">Pricing made simple</h1>
 
-      {/* Pricing Cards */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {["starter", "pro", "ultimate"].map((tier) => {
-          const plan = selected[tier];
-          if (!plan) return null;
-
-          const isPro = tier === "pro";
-          const isUltimate = tier === "ultimate";
-
-          return (
-            <div
-              key={tier}
-              className={`border rounded-2xl p-8 flex flex-col justify-between ${
-                isPro ? "border-purple-400 bg-purple-50" : "bg-gray-50"
-              }`}
-            >
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                  {tier.charAt(0).toUpperCase() + tier.slice(1)}
-                  {isPro && (
-                    <span className="text-xs bg-gray-800 text-white px-2 py-1 rounded">
-                      Popular
-                    </span>
-                  )}
-                </h3>
-                <p className="mt-2 text-3xl font-bold text-gray-900">
-                  {plan.price}
-                  {plan.price !== "Let's talk" && (
-                    <span className="text-sm font-medium text-gray-600">
-                      {" "}per user/month
-                    </span>
-                  )}
-                </p>
-                <p className="mt-4 text-gray-600">{plan.desc}</p>
-                <ul className="mt-4 space-y-2 text-gray-700">
-                  {plan.features.map((f, i) => (
-                    <li key={i}>✓ {f}</li>
-                  ))}
+        {activeTab === "Support" && (
+          <>
+            {/* Top Pricing Cards */}
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
+              {/* Starter */}
+              <div className="border rounded-xl shadow-sm p-6 flex flex-col">
+                <h3 className="text-lg font-semibold mb-2">Starter</h3>
+                <p className="text-3xl font-bold mb-2">$19.99</p>
+                <p className="text-sm mb-4">per user/month</p>
+                <ul className="text-sm text-gray-700 mb-6 space-y-2">
+                  <li>✔ AI agents, assistants, and deflection</li>
+                  <li>✔ Modern omnichannel ticketing platform</li>
+                  <li>✔ Data migration and integrations</li>
+                  <li>✔ Ready to go reporting and analytics</li>
                 </ul>
+                <button className="mt-auto w-full py-3 rounded-lg bg-black text-white hover:bg-gray-900">
+                  Get started free
+                </button>
               </div>
-              <button className="mt-6 bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-800">
-                {plan.price === "Let's talk" ? "Get a demo" : "Get started free"}
-              </button>
-              {!isUltimate && (
-                <p className="mt-2 text-sm text-gray-500 text-center">
-                  Trial Pro free for 45 days
-                </p>
-              )}
+
+              {/* Pro */}
+              <div className="border rounded-xl shadow-md p-6 flex flex-col bg-purple-50">
+                <h3 className="text-lg font-semibold mb-2">
+                  Pro{" "}
+                  <span className="ml-2 text-xs bg-purple-200 px-2 py-1 rounded-full">
+                    Popular
+                  </span>
+                </h3>
+                <p className="text-3xl font-bold mb-2">$59.99</p>
+                <p className="text-sm mb-4">per user/month</p>
+                <ul className="text-sm text-gray-700 mb-6 space-y-2">
+                  <li>✔ Everything in Starter</li>
+                  <li>✔ Advanced reporting & analytics</li>
+                  <li>✔ Custom AI-based routing policies</li>
+                  <li>✔ Customizable object and data types</li>
+                </ul>
+                <button className="mt-auto w-full py-3 rounded-lg bg-black text-white hover:bg-gray-900">
+                  Get started free
+                </button>
+              </div>
+
+              {/* Ultimate */}
+              <div className="border rounded-xl shadow-sm p-6 flex flex-col">
+                <h3 className="text-lg font-semibold mb-2">Ultimate</h3>
+                <p className="text-3xl font-bold mb-2">Let’s talk</p>
+                <p className="text-sm mb-4">per user/month</p>
+                <ul className="text-sm text-gray-700 mb-6 space-y-2">
+                  <li>✔ Everything in Pro</li>
+                  <li>✔ Full object model customization</li>
+                  <li>✔ Unlimited integrations</li>
+                  <li>✔ Enterprise-grade security, compliance, and controls</li>
+                </ul>
+                <button className="mt-auto w-full py-3 rounded-lg bg-black text-white hover:bg-gray-900">
+                  Get a demo
+                </button>
+              </div>
             </div>
-          );
-        })}
+
+            {/* Bottom Section */}
+            <div className="mb-10">
+              <p className="uppercase text-xs font-semibold text-gray-500 mb-2">
+                Comparison
+              </p>
+              <h2 className="text-2xl font-bold mb-10">
+                An AI-Agent platform to build products and support customers
+              </h2>
+
+              {/* Small Pricing Row */}
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* Starter Small */}
+                <div className="border rounded-lg p-6 bg-white shadow-sm">
+                  <h3 className="font-semibold">Starter</h3>
+                  <p className="text-2xl font-bold">$19.99</p>
+                  <p className="text-xs text-gray-500">per user/month</p>
+                  <p className="text-xs text-gray-500 mb-4">Up to 10 users</p>
+                  <button className="px-4 py-2 rounded-md bg-black text-white text-sm hover:bg-gray-900">
+                    Start a free trial
+                  </button>
+                </div>
+
+                {/* Pro Small */}
+                <div className="border rounded-lg p-6 bg-purple-50 shadow-sm">
+                  <h3 className="font-semibold">Pro</h3>
+                  <p className="text-2xl font-bold">$59.99</p>
+                  <p className="text-xs text-gray-500">per user/month</p>
+                  <button className="px-4 py-2 mt-4 rounded-md bg-black text-white text-sm hover:bg-gray-900">
+                    Start a free trial
+                  </button>
+                </div>
+
+                {/* Ultimate Small */}
+                <div className="border rounded-lg p-6 bg-gray-50 shadow-sm">
+                  <h3 className="font-semibold">Ultimate</h3>
+                  <p className="text-2xl font-bold">Let’s talk</p>
+                  <p className="text-xs text-gray-500">per user/month</p>
+                  <button className="px-4 py-2 mt-4 rounded-md bg-black text-white text-sm hover:bg-gray-900">
+                    Get a demo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+
+        {activeTab === "Build" && (
+          <div className="text-lg text-gray-700">
+            🚧 Build section content coming soon...
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default PricingPlans;
+export default PricingPage;

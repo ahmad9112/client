@@ -45,7 +45,7 @@ export default function CustomerSuccessSection() {
         {features.map((item, i) => (
           <div
             key={i}
-            className="bg-[#B5DCFF] rounded-2xl p-10 flex flex-col justify-between shadow-lg hover:scale-[1.02] transition-transform"
+            className="bg-[#88bfef] rounded-2xl p-10 flex flex-col justify-between shadow-lg hover:scale-[1.02] transition-transform"
           >
             {/* Text Section */}
             <div className="text-center">

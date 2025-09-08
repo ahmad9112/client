@@ -72,7 +72,8 @@ export default function HeroSection() {
             </p>
 
             {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+  {/* Buttons */}
+<div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
   <a
     href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
     target="_blank"
@@ -81,10 +82,16 @@ export default function HeroSection() {
   >
     Get a free 30-min demo
   </a>
-  <button className="px-5 sm:px-6 py-3 bg-white text-black border rounded-full font-medium hover:bg-gray-100 transition text-sm sm:text-base">
+  <a
+    href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-5 sm:px-6 py-3 bg-white text-black border rounded-full font-medium hover:bg-gray-100 transition text-sm sm:text-base"
+  >
     Speak to sales
-  </button>
+  </a>
 </div>
+
 
           </motion.div>
 
@@ -113,22 +120,23 @@ export default function HeroSection() {
           <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-[37%_63%] gap-8 sm:gap-12 pt-6 sm:pt-8">
             
             {/* Backed By (Static, Responsive, No Cutoff) */}
-            <div className="text-center md:text-left">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
-                Backed By
-              </h3>
-         <div className="flex flex-wrap md:flex-nowrap gap-3 justify-start items-center">
-  {backedBy.map((logo, i) => (
-    <img
-      key={i}
-      src={logo}
-      alt={`backed-logo-${i}`}
-      className="max-h-12 md:max-h-14 w-auto object-contain opacity-80 hover:opacity-100 transition"
-    />
-  ))}
+     {/* Backed By (smaller logos) */}
+<div className="text-center md:text-left">
+  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
+    Backed By
+  </h3>
+  <div className="flex justify-center md:justify-start gap-4 items-center">
+    {backedBy.map((logo, i) => (
+      <img
+        key={i}
+        src={logo}
+        alt={`backed-logo-${i}`}
+        className="h-10 sm:h-12 md:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition"
+      />
+    ))}
+  </div>
 </div>
 
-            </div>
 
             {/* Trusted By (Scrolling, Responsive, No Cutoff) */}
             <div className="text-center md:text-left  md:pl-8 overflow-hidden">

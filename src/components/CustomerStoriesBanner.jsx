@@ -9,7 +9,6 @@ import relocationImg from "../assets/relocation.png";
 import mergersImg from "../assets/mergers.png";
 
 // Tabs Data for Customer Stories
-// Tabs Data for Customer Stories
 const tabsData = {
   "Global Hiring": {
     img: hiringImg,
@@ -37,7 +36,6 @@ const tabsData = {
     desc: "“Ask Dexy has become our internal copilot. From auto-QA to instant summaries, it’s like having an extra analyst on the team.” — Karan P., Founder & CEO",
   },
 };
-
 
 // MAIN COMPONENT
 const LandingSections = () => {
@@ -70,11 +68,11 @@ const LandingSections = () => {
         {/* Heading */}
         <div className="text-center mb-10">
           <h2 className="text-xs md:text-sm font-semibold text-gray-500 mb-2">
-           Customer Stories
+            Customer Stories
           </h2>
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-           Customer stories from teams <br className="hidden sm:block" />
-             scaling with DexKor.
+            Customer stories from teams <br className="hidden sm:block" />
+            scaling with DexKor.
           </h3>
 
           {/* Tabs */}
@@ -151,9 +149,14 @@ const LandingSections = () => {
             </div>
 
             {/* CTA Button */}
-            <button className="mt-6 md:mt-8 px-5 md:px-6 py-2.5 md:py-3 bg-black text-white rounded-full text-sm md:text-base font-medium hover:bg-gray-800 transition">
+            <a
+              href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 md:mt-8 inline-block px-5 md:px-6 py-2.5 md:py-3 bg-black text-white rounded-full text-sm md:text-base font-medium hover:bg-gray-800 transition"
+            >
               Get started
-            </button>
+            </a>
           </div>
 
           {/* Right: Image */}

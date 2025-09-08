@@ -45,7 +45,7 @@ export default function OnboardingFeaturesSection() {
         {features.map((item, i) => (
           <div
             key={i}
-            className="bg-[#D9C9FF] rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow"
+            className="bg-blue-200 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow"
           >
             <div>
               <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">

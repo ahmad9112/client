@@ -4,9 +4,9 @@ import { Globe, User, Monitor, Boxes } from "lucide-react";
 export default function FeaturesSection({ activeFeature, setActiveFeature }) {
   const features = [
     { title: "Dexy AI", icon: Globe, activeColor: "bg-blue-200" },
-    { title: "SalesHub", icon: User, activeColor: "bg-yellow-200" },
-    { title: "OnboardHub", icon: Monitor, activeColor: "bg-purple-200" },
-    { title: "HelpDesk", icon: Boxes, activeColor: "bg-blue-200" },
+    { title: "SalesHub", icon: User, activeColor: "bg-purple-300" },
+    { title: "OnboardHub", icon: Monitor, activeColor: "bg-blue-200" },
+    { title: "HelpDesk", icon: Boxes, activeColor: "bg-yellow-200" },
     { title: "AccountCare", icon: Boxes, activeColor: "bg-blue-200" },
   ];
 
