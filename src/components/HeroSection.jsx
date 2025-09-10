@@ -116,50 +116,60 @@ export default function HeroSection() {
         </div>
 
         {/* Logos Section */}
-        <div className="mt-12 sm:mt-16 md:mt-20 px-4 sm:px-8">
-          <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-[37%_63%] gap-8 sm:gap-12 pt-6 sm:pt-8">
-            
-            {/* Backed By (Static, Responsive, No Cutoff) */}
-     {/* Backed By (smaller logos) */}
-<div className="text-center md:text-left">
-  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
-    Backed By
-  </h3>
-  <div className="flex justify-center md:justify-start gap-4 items-center">
-    {backedBy.map((logo, i) => (
-      <img
-        key={i}
-        src={logo}
-        alt={`backed-logo-${i}`}
-        className="h-10 sm:h-12 md:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition"
-      />
-    ))}
+       {/* Logos Section */}
+<div className="mt-12 sm:mt-16 md:mt-20 px-4 sm:px-8">
+  <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-[37%_3%_60%] gap-8 sm:gap-12 pt-6 sm:pt-8">
+    
+    {/* Backed By (Left 37%) */}
+    <div className="text-center md:text-left">
+      <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800 tracking-wide">
+        Backed By
+      </h3>
+      <div className="flex justify-center md:justify-start gap-4 items-center">
+        {backedBy.map((logo, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt={`backed-logo-${i}`}
+            className="h-10 sm:h-12 md:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition"
+          />
+        ))}
+      </div>
+    </div>
+
+    {/* Spacer Column (3%) */}
+    <div className="hidden md:block"></div>
+
+    {/* Trusted By (Right 60%) */}
+    <div className="relative text-center md:text-left overflow-hidden ">
+      {/* Heading */}
+      <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 text-gray-800 tracking-wide">
+        Trusted By
+      </h3>
+
+      {/* Logos slider */}
+      <motion.div
+        className="flex flex-nowrap whitespace-nowrap gap-8 sm:gap-10 md:gap-12"
+        animate={{ x: ["0%", "-100%"] }}
+        transition={{ ease: "linear", duration: 20, repeat: Infinity }}
+      >
+        {[...trustedBy, ...trustedBy].map((logo, i) => (
+          <div
+            key={i}
+            className="flex items-center justify-center min-w-[120px] sm:min-w-[150px] md:min-w-[180px]"
+          >
+            <img
+              src={logo}
+              alt={`trusted-logo-${i}`}
+              className="max-h-12 sm:max-h-14 md:max-h-16 lg:max-h-20 w-auto object-contain opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300 ease-in-out drop-shadow-md"
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
   </div>
 </div>
 
-
-            {/* Trusted By (Scrolling, Responsive, No Cutoff) */}
-            <div className="text-center md:text-left  md:pl-8 overflow-hidden">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-6">
-                Trusted By
-              </h3>
-              <motion.div
-                className="flex flex-nowrap whitespace-nowrap gap-6 sm:gap-8 md:gap-10"
-                animate={{ x: ["0%", "-100%"] }}
-                transition={{ ease: "linear", duration: 30, repeat: Infinity }}
-              >
-                {[...trustedBy, ...trustedBy].map((logo, i) => (
-                  <img
-                    key={i}
-                    src={logo}
-                    alt={`trusted-logo-${i}`}
-                    className="max-h-12 sm:max-h-14 md:max-h-16 lg:max-h-20 w-auto max-w-[150px] object-contain opacity-80 hover:opacity-100 transition inline-block"
-                  />
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* White Section */}
