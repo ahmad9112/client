@@ -5,7 +5,7 @@ import { FaBox, FaUsers, FaCogs, FaLifeRing } from "react-icons/fa";
 import { MdTravelExplore, MdStorefront } from "react-icons/md";
 import { RiBankFill } from "react-icons/ri";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";   // ✅ Router links
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -13,7 +13,6 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubMenu, setMobileSubMenu] = useState(null);
   const menuRef = useRef(null);
-  const timeoutRef = useRef(null);
 
   // Sticky shadow on scroll
   useEffect(() => {
@@ -41,15 +40,6 @@ export default function Navbar() {
     transition: { type: "spring", stiffness: 200, damping: 20 },
   };
 
-  const handleMouseEnter = (menu) => {
-    clearTimeout(timeoutRef.current);
-    setActiveMenu(menu);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setActiveMenu(null), 150);
-  };
-
   return (
     <nav
       className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 font-satoshi ${
@@ -63,7 +53,7 @@ export default function Navbar() {
         ref={menuRef}
         className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-10 py-5"
       >
-        {/* Logo → Home */}
+        {/* Logo */}
         <div className="flex items-center gap-2 text-[#1A2B6B] font-bold text-xl">
           <Link to="/">
             <img
@@ -79,8 +69,8 @@ export default function Navbar() {
           {/* Products */}
           <div
             className="relative group"
-            onMouseEnter={() => handleMouseEnter("products")}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => setActiveMenu("products")}
+            onMouseLeave={() => setActiveMenu(null)}
           >
             <button className="flex items-center hover:text-[#1A73E8] transition">
               Products <FiChevronDown className="ml-1" />
@@ -89,23 +79,29 @@ export default function Navbar() {
               {activeMenu === "products" && (
                 <motion.div
                   {...dropdownMotion}
-                  className="absolute left-0 top-12 w-[600px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-6"
+                  className="absolute left-0 top-12 w-[850px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl p-6 grid grid-cols-4 gap-6"
                 >
+                  {/* RevOps Hub */}
                   <div>
-                    <h4 className="text-gray-400 text-sm font-semibold mb-2">
+                    <h4 className="text-gray-400 text-sm font-semibold mb-3">
                       RevOps Hub
                     </h4>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaBox /> <span>AdSuite</span>
+                        <FaBox /> <span>AdSuitePro</span>
+                      </li>
+                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
+                        <FaUsers /> <span>DemoDesk</span>
                       </li>
                       <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
                         <FaUsers /> <span>SalesHub</span>
                       </li>
                     </ul>
                   </div>
+
+                  {/* CXOps Hub */}
                   <div>
-                    <h4 className="text-gray-400 text-sm font-semibold mb-2">
+                    <h4 className="text-gray-400 text-sm font-semibold mb-3">
                       CXOps Hub
                     </h4>
                     <ul className="space-y-3">
@@ -113,20 +109,67 @@ export default function Navbar() {
                         <FaCogs /> <span>OnBoard</span>
                       </li>
                       <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaLifeRing /> <span>SupportDesk</span>
+                        <FaLifeRing /> <span>HelpDesk</span>
+                      </li>
+                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
+                        <FaUsers /> <span>Dexy</span>
+                      </li>
+                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
+                        <FaUsers /> <span>AnswerPro</span>
+                      </li>
+                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
+                        <FaUsers /> <span>AccountCore</span>
                       </li>
                     </ul>
+                  </div>
+
+                  {/* TeamOps Hub */}
+                  <div>
+                    <h4 className="text-gray-400 text-sm font-semibold mb-3">
+                      TeamOps Hub
+                    </h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
+                        <FaCogs /> <span>ProductPro</span>
+                      </li>
+                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
+                        <FaCogs /> <span>DocCore</span>
+                      </li>
+                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
+                        <FaCogs /> <span>StriBoard</span>
+                      </li>
+                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
+                        <FaCogs /> <span>TalentPulse</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Promo Card (Desktop) */}
+                  <div className="bg-gray-50 rounded-xl p-5 shadow-md flex flex-col justify-between">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900">
+                        Experience the age of AI-powered customer support.
+                      </h4>
+                      <p className="mt-2 text-sm text-gray-600">
+                        With Dexy, our GPT-4 powered assistant, your support,
+                        sales, and success teams can resolve issues faster and
+                        delight customers.
+                      </p>
+                    </div>
+                    <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                      Get Started
+                    </button>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* Solutions */}
+          {/* Who we serve */}
           <div
             className="relative group"
-            onMouseEnter={() => handleMouseEnter("solutions")}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={() => setActiveMenu("solutions")}
+            onMouseLeave={() => setActiveMenu(null)}
           >
             <button className="flex items-center hover:text-[#1A73E8] transition">
               Who we serve <FiChevronDown className="ml-1" />
@@ -142,10 +185,12 @@ export default function Navbar() {
                       <RiBankFill className="text-[#1A73E8]" /> <span>BFSI</span>
                     </li>
                     <li className="flex items-center gap-2 hover:text-[#1A73E8] cursor-pointer">
-                      <MdStorefront className="text-[#1A73E8]" /> <span>Retail</span>
+                      <MdStorefront className="text-[#1A73E8]" />{" "}
+                      <span>Retail</span>
                     </li>
                     <li className="flex items-center gap-2 hover:text-[#1A73E8] cursor-pointer">
-                      <MdTravelExplore className="text-[#1A73E8]" /> <span>Travel</span>
+                      <MdTravelExplore className="text-[#1A73E8]" />{" "}
+                      <span>Travel</span>
                     </li>
                   </ul>
                   <div>
@@ -220,18 +265,84 @@ export default function Navbar() {
               </button>
               <AnimatePresence>
                 {mobileSubMenu === "products" && (
-                  <motion.div {...dropdownMotion} className="pl-4 mt-2 space-y-2">
-                    {["AdSuite", "SalesHub", "OnBoard", "SupportDesk"].map(
-                      (s, i) => (
-                        <motion.p
-                          key={i}
-                          whileHover={{ scale: 1.05, backgroundColor: "#f0f9ff" }}
-                          className="px-3 py-2 rounded-lg cursor-pointer"
-                        >
-                          {s}
-                        </motion.p>
-                      )
-                    )}
+                  <motion.div {...dropdownMotion} className="pl-4 mt-2 space-y-3">
+                    {/* RevOps */}
+                    <div>
+                      <h4 className="text-gray-500 text-sm font-semibold">
+                        RevOps Hub
+                      </h4>
+                      <ul className="space-y-2 mt-1">
+                        <li className="flex items-center gap-2">
+                          <FaBox /> <span>AdSuitePro</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <FaUsers /> <span>DemoDesk</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <FaUsers /> <span>SalesHub</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* CXOps */}
+                    <div>
+                      <h4 className="text-gray-500 text-sm font-semibold">
+                        CXOps Hub
+                      </h4>
+                      <ul className="space-y-2 mt-1">
+                        <li className="flex items-center gap-2">
+                          <FaCogs /> <span>OnBoard</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <FaLifeRing /> <span>HelpDesk</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <FaUsers /> <span>Dexy</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <FaUsers /> <span>AnswerPro</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <FaUsers /> <span>AccountCore</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* TeamOps */}
+                    <div>
+                      <h4 className="text-gray-500 text-sm font-semibold">
+                        TeamOps Hub
+                      </h4>
+                      <ul className="space-y-2 mt-1">
+                        <li className="flex items-center gap-2">
+                          <FaCogs /> <span>ProductPro</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <FaCogs /> <span>DocCore</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <FaCogs /> <span>StriBoard</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <FaCogs /> <span>TalentPulse</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Promo Card (Mobile) */}
+                    <div className="bg-gray-50 rounded-xl p-4 mt-4 shadow flex flex-col">
+                      <h4 className="text-base font-semibold text-gray-900">
+                        Experience the age of AI-powered customer support.
+                      </h4>
+                      <p className="mt-2 text-sm text-gray-600">
+                        With Dexy, our GPT-4 powered assistant, your support,
+                        sales, and success teams can resolve issues faster and
+                        delight customers.
+                      </p>
+                      <button className="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        Get Started
+                      </button>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -255,7 +366,10 @@ export default function Navbar() {
                     {["BFSI", "Retail", "Travel"].map((s, i) => (
                       <motion.p
                         key={i}
-                        whileHover={{ scale: 1.05, backgroundColor: "#f0f9ff" }}
+                        whileHover={{
+                          scale: 1.05,
+                          backgroundColor: "#f0f9ff",
+                        }}
                         className="px-3 py-2 rounded-lg cursor-pointer"
                       >
                         {s}
@@ -311,7 +425,9 @@ export default function Navbar() {
       <div className="hidden lg:block w-full bg-[#1A1152] text-white text-sm">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 px-6 py-4">
           <div className="flex items-center gap-2">
-            <span className="text-blue-200">🌟 Redefining Customer Success with AI</span>
+            <span className="text-blue-200">
+              🌟 Redefining Customer Success with AI
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-yellow-300 font-medium">
@@ -319,9 +435,11 @@ export default function Navbar() {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-purple-200">🔒 Trusted security and compliance</span>
+            <span className="text-purple-200">
+              🔒 Trusted security and compliance
+            </span>
           </div>
-        </div> 
+        </div>
       </div>
     </nav>
   );
