@@ -17,7 +17,7 @@ const TABS = {
   DEVCORE: "DevCore",
   LEARNHUB: "LearnHub",
   STARBOARD: "StarBoard",
-  AGENTIC_AI: "Agentic AI",
+  AI_Copilot: "AI Copilot",
   DEXY: "Dexy",
   INTEGRATIONS_HUB: "Integrations Hub",
   WORKFLOW_AUTOMATION: "Workflow Automation",
@@ -69,12 +69,31 @@ const SidebarItem = ({ label, isActive, onClick, children }) => {
   );
 };
 
+// ✅ Mobile menu toggle
+const MobileMenuToggle = ({ isOpen, toggleMenu }) => (
+  <button
+    onClick={toggleMenu}
+    className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-white rounded-md shadow-md"
+    aria-label="Toggle menu"
+  >
+    {isOpen ? (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    ) : (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    )}
+  </button>
+);
+
 // ✅ Pricing Content for OnBoardHub and SalesHub
 const renderOnBoardHubPricing = () => (
   <div>
     <h1 className="text-2xl font-bold mb-6">OnBoardHub Pricing</h1>
     {/* Pricing Plans */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {/* Starter */}
       <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-md">
         <h2 className="text-xl font-semibold mb-2">Starter</h2>
@@ -181,7 +200,7 @@ const renderOnBoardHubPricing = () => (
 const renderSalesHubPricing = () => (
   <div>
     <h1 className="text-2xl font-bold mb-6">SalesHub Pricing</h1>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {/* Starter */}
       <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-md">
         <h2 className="text-xl font-semibold mb-2">Starter</h2>
@@ -327,7 +346,7 @@ const renderHelpDeskPricing = () => (
   <div>
     <h1 className="text-2xl font-bold mb-6">HelpDesk Pricing</h1>
     {/* Pricing Plans */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {/* Starter */}
       <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-md">
         <h2 className="text-xl font-semibold mb-2">Starter</h2>
@@ -466,7 +485,7 @@ const renderDevCorePricing = () => (
     <h1 className="text-2xl font-bold mb-6">DevCore Pricing</h1>
     
     {/* Pricing Plans */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {/* Starter Plan */}
       <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-md">
         <h2 className="text-xl font-semibold mb-2">Starter</h2>
@@ -594,7 +613,7 @@ const renderAccountCarePricing = () => (
     <h1 className="text-2xl font-bold mb-6">AccountCare Pricing</h1>
 
     {/* Pricing Plans */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {/* Starter Plan */}
       <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-md">
         <h2 className="text-xl font-semibold mb-2">Starter</h2>
@@ -741,7 +760,7 @@ const renderDexyAIPricing = () => (
     <h1 className="text-2xl font-bold mb-6">Dexy AI Pricing</h1>
 
     {/* Pricing Plans */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {/* Starter Plan */}
       <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-md">
         <h2 className="text-xl font-semibold mb-2">Starter</h2>
@@ -895,7 +914,7 @@ const renderStarboardPricing = () => (
     <h1 className="text-2xl font-bold mb-6">Starboard Pricing</h1>
 
     {/* Pricing Plans */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {/* Starter Plan */}
       <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-md">
         <h2 className="text-xl font-semibold mb-2">Starter</h2>
@@ -1042,13 +1061,10 @@ const renderStarboardPricing = () => (
   </div>
 );
 
-
-
-
-
 // ✅ Tab content
 const PricingPage = () => {
   const [activeTab, setActiveTab] = useState(TABS.REVOPS_HUB);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Sidebar sections as before
   const sidebarSections = useMemo(
@@ -1086,8 +1102,8 @@ const PricingPage = () => {
             ],
           },
           {
-            key: TABS.AGENTIC_AI,
-            label: "Agentic AI",
+            key: TABS.AI_Copilot,
+            label: "AI Copilot",
             children: [{ key: TABS.DEXY, label: "Dexy" }],
           },
         ],
@@ -1119,20 +1135,20 @@ const PricingPage = () => {
       return renderSalesHubPricing();
     }
     if (activeTab === TABS.HELPDESK) {
-    return renderHelpDeskPricing();
-  }
-  if (activeTab === TABS.DEVCORE) {
-    return renderDevCorePricing();
-  }
-  if (activeTab === TABS.ACCOUNT_CARE) {
-    return renderAccountCarePricing();
-  }
-  if (activeTab === TABS.DEXY) {
-    return renderDexyAIPricing();
-  }
-  if (activeTab === TABS.STARBOARD) {
-    return renderStarboardPricing();
-  }
+      return renderHelpDeskPricing();
+    }
+    if (activeTab === TABS.DEVCORE) {
+      return renderDevCorePricing();
+    }
+    if (activeTab === TABS.ACCOUNT_CARE) {
+      return renderAccountCarePricing();
+    }
+    if (activeTab === TABS.DEXY) {
+      return renderDexyAIPricing();
+    }
+    if (activeTab === TABS.STARBOARD) {
+      return renderStarboardPricing();
+    }
 
     return (
       <div>
@@ -1144,10 +1160,22 @@ const PricingPage = () => {
     );
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <div className="flex min-h-screen bg-white">
+    <div className="flex min-h-screen bg-gray-50 relative">
+      {/* Mobile menu toggle */}
+      <MobileMenuToggle isOpen={isMobileMenuOpen} toggleMenu={toggleMobileMenu} />
+      
       {/* Sidebar */}
-      <div className="w-64 border-r p-6 text-sm text-gray-800">
+      <div className={`w-64 p-6 text-sm text-gray-800 bg-white fixed lg:static inset-y-0 left-0 z-40 transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto`}>
         {sidebarSections.map((section, index) => (
           <div key={index} className="mb-6">
             <h2 className="text-lg font-semibold mb-3">{section.title}</h2>
@@ -1157,7 +1185,7 @@ const PricingPage = () => {
                   key={item.key}
                   label={item.label}
                   isActive={activeTab}
-                  onClick={setActiveTab}
+                  onClick={handleTabClick}
                   children={item.children}
                 />
               ))}
@@ -1166,8 +1194,18 @@ const PricingPage = () => {
         ))}
       </div>
 
+      {/* Overlay for mobile */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        ></div>
+      )}
+
       {/* Content */}
-      <div className="flex-1 p-10">{renderTabContent()}</div>
+      <div className="flex-1 p-4 lg:p-10 mt-16 lg:mt-0 overflow-auto">
+        {renderTabContent()}
+      </div>
     </div>
   );
 };

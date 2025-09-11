@@ -133,7 +133,7 @@ const ReviewsAndFooter = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Products</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#">SakesHub</a></li>
+              <li><a href="#">SalesHub</a></li>
               <li><a href="#">DemoDesk</a></li>
               <li><a href="#">AdSuite</a></li>
               <li><a href="#">HelpDesk</a></li>
