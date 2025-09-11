@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useMemo } from "react";
+import Form from "../Form";
 
 // ✅ Tabs (constants)
 const TABS = {
@@ -1156,6 +1157,7 @@ const PricingPage = () => {
         <p className="text-gray-600">
           Content for <b>{activeTab}</b> goes here.
         </p>
+        <Form />
       </div>
     );
   };
