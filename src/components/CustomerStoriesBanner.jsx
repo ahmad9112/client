@@ -10,27 +10,27 @@ import mergersImg from "../assets/mergers.png";
 
 // Tabs Data for Customer Stories
 const tabsData = {
-  "Global Hiring": {
+  "SalesHub": {
     img: hiringImg,
     stat: "💛 SalesHub – SaaS Startup",
     desc: "“With SalesHub, we finally have one place to track and prioritize leads. Deal conversions are up 25% since we stopped juggling spreadsheets.” — Ankit M., Sales Lead, SaaS Startup",
   },
-  "Global Payroll": {
+  "OnboardHub": {
     img: payrollImg,
     stat: "💙 OnboardHub – HR Tech Company",
     desc: "“Onboarding used to take weeks. With OnboardHub playbooks and task automation, customers go live in half the time — and with less effort from our team.” — Riya S., Customer Success Manager",
   },
-  "Compliance": {
+  "HelpDesk": {
     img: complianceImg,
     stat: "💜 HelpDesk – Logistics Company",
     desc: "“DexKor’s HelpDesk gave us SLA tracking and AI summaries out of the box. Our support costs dropped by 30% and agents save hours every week.” — Arjun K., Operations Manager",
   },
-  "Employee relocation": {
+  "AccountCare": {
     img: relocationImg,
     stat: "💚 AccountCare – Mid-market SaaS",
     desc: "“We can see risks before they become churn. Health scores and alerts helped us retain two major accounts this quarter alone.” — Emily R., Head of CS",
   },
-  "Mergers/Acquisitions": {
+  "Dexy AI": {
     img: mergersImg,
     stat: "🖤 Dexy AI – D2C Brand",
     desc: "“Ask Dexy has become our internal copilot. From auto-QA to instant summaries, it’s like having an extra analyst on the team.” — Karan P., Founder & CEO",
@@ -39,7 +39,7 @@ const tabsData = {
 
 // MAIN COMPONENT
 const LandingSections = () => {
-  const [activeTab, setActiveTab] = useState("Global Hiring");
+  const [activeTab, setActiveTab] = useState("SalesHub");
 
   const { img, stat, desc } = tabsData[activeTab];
 
