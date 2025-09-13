@@ -67,146 +67,177 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-8 text-gray-800 font-medium relative">
           {/* Products */}
-          <div
-            className="relative group"
-            onMouseEnter={() => setActiveMenu("products")}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
-            <button className="flex items-center hover:text-[#1A73E8] transition">
-              Products <FiChevronDown className="ml-1" />
-            </button>
-            <AnimatePresence>
-              {activeMenu === "products" && (
-                <motion.div
-                  {...dropdownMotion}
-                  className="absolute left-0 top-12 w-[850px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl p-6 grid grid-cols-4 gap-6"
-                >
-                  {/* RevOps Hub */}
-                  <div>
-                    <h4 className="text-gray-400 text-sm font-semibold mb-3">
-                      RevOps Hub
-                    </h4>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaBox /> <span>AdSuitePro</span>
-                      </li>
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaUsers /> <span>DemoDesk</span>
-                      </li>
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaUsers /> <span>SalesHub</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* CXOps Hub */}
-                  <div>
-                    <h4 className="text-gray-400 text-sm font-semibold mb-3">
-                      CXOps Hub
-                    </h4>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaCogs /> <span>OnBoard</span>
-                      </li>
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaLifeRing /> <span>HelpDesk</span>
-                      </li>
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaUsers /> <span>Dexy</span>
-                      </li>
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaUsers /> <span>AnswerPro</span>
-                      </li>
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaUsers /> <span>AccountCore</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* TeamOps Hub */}
-                  <div>
-                    <h4 className="text-gray-400 text-sm font-semibold mb-3">
-                      TeamOps Hub
-                    </h4>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaCogs /> <span>ProductPro</span>
-                      </li>
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaCogs /> <span>DocCore</span>
-                      </li>
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaCogs /> <span>StriBoard</span>
-                      </li>
-                      <li className="flex items-start gap-2 hover:text-[#1A73E8] cursor-pointer">
-                        <FaCogs /> <span>TalentPulse</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Promo Card (Desktop) */}
-                  <div className="bg-gray-50 rounded-xl p-5 shadow-md flex flex-col justify-between">
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900">
-                        Experience the age of AI-powered customer support.
-                      </h4>
-                      <p className="mt-2 text-sm text-gray-600">
-                        With Dexy, our GPT-4 powered assistant, your support,
-                        sales, and success teams can resolve issues faster and
-                        delight customers.
-                      </p>
-                    </div>
-                    <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                      Get Started
-                    </button>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+       {/* Products */}
+<div
+  className="relative group"
+  onMouseEnter={() => setActiveMenu("products")}
+  onMouseLeave={() => setActiveMenu(null)}
+>
+  <button className="flex items-center hover:text-[#1A73E8] transition">
+    Products <FiChevronDown className="ml-1" />
+  </button>
+  <AnimatePresence>
+    {activeMenu === "products" && (
+      <motion.div
+        {...dropdownMotion}
+        className="absolute left-0 top-12 w-[900px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl p-6 flex flex-col gap-6"
+      >
+        {/* RevOps Hub */}
+        <div>
+          <h4 className="text-gray-400 text-sm font-semibold mb-3">RevOps Hub</h4>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaBox /> <div><p className="font-medium">AdSuite</p><p className="text-xs text-gray-500">Plan, launch, and manage campaigns across channels</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaUsers /> <div><p className="font-medium">DemoDesk</p><p className="text-xs text-gray-500">Centralized hub for leads</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaUsers /> <div><p className="font-medium">SalesHub</p><p className="text-xs text-gray-500">Plan, launch, and manage campaigns across channels</p></div>
+            </div>
           </div>
+        </div>
+
+        {/* CXOps Hub */}
+        <div>
+          <h4 className="text-gray-400 text-sm font-semibold mb-3">CXOps Hub</h4>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaCogs /> <div><p className="font-medium">OnBoard</p><p className="text-xs text-gray-500">Plan, launch, and manage campaigns</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaLifeRing /> <div><p className="font-medium">HelpDesk</p><p className="text-xs text-gray-500">Centralized hub for leads</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaUsers /> <div><p className="font-medium">Dexy</p><p className="text-xs text-gray-500">AI-powered customer support</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaUsers /> <div><p className="font-medium">AnswerPro</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaUsers /> <div><p className="font-medium">AccountCare</p><p className="text-xs text-gray-500">Centralized hub for leads</p></div>
+            </div>
+          </div>
+        </div>
+
+        {/* TeamOps Hub */}
+        <div>
+          <h4 className="text-gray-400 text-sm font-semibold mb-3">TeamOps Hub</h4>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaCogs /> <div><p className="font-medium">ProductPro</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaCogs /> <div><p className="font-medium">DevCore</p><p className="text-xs text-gray-500">Centralized hub for leads</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaCogs /> <div><p className="font-medium">StarBoard</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaCogs /> <div><p className="font-medium">TalentPulse</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
+            </div>
+            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+              <FaCogs /> <div><p className="font-medium">LearnHub</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Promo Card */}
+        <div className="bg-black text-white rounded-xl p-5 flex flex-col justify-between">
+          <h4 className="text-lg font-semibold">Experience the age of AI-powered customer support.</h4>
+          <p className="mt-2 text-sm text-gray-300">
+            With Dexy, our GPT-4o powered chatbot, bug reporting, product roadmaps, surveys & marketing automations.
+          </p>
+          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            Get Started
+          </button>
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
 
           {/* Who we serve */}
-          <div
-            className="relative group"
-            onMouseEnter={() => setActiveMenu("solutions")}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
-            <button className="flex items-center hover:text-[#1A73E8] transition">
-              Who we serve <FiChevronDown className="ml-1" />
-            </button>
-            <AnimatePresence>
-              {activeMenu === "solutions" && (
-                <motion.div
-                  {...dropdownMotion}
-                  className="absolute left-0 top-12 w-[500px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-6"
-                >
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-2 hover:text-[#1A73E8] cursor-pointer">
-                      <RiBankFill className="text-[#1A73E8]" /> <span>BFSI</span>
-                    </li>
-                    <li className="flex items-center gap-2 hover:text-[#1A73E8] cursor-pointer">
-                      <MdStorefront className="text-[#1A73E8]" />{" "}
-                      <span>Retail</span>
-                    </li>
-                    <li className="flex items-center gap-2 hover:text-[#1A73E8] cursor-pointer">
-                      <MdTravelExplore className="text-[#1A73E8]" />{" "}
-                      <span>Travel</span>
-                    </li>
-                  </ul>
-                  <div>
-                    <h4 className="text-gray-500 text-sm font-semibold mb-2">
-                      Explore More in BFSI
-                    </h4>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>Retail & Corporate Banking</li>
-                      <li>Lending</li>
-                      <li>Trading</li>
-                    </ul>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+          {/* Who we serve */}
+<div
+  className="relative group"
+  onMouseEnter={() => setActiveMenu("solutions")}
+  onMouseLeave={() => setActiveMenu(null)}
+>
+  <button className="flex items-center hover:text-[#1A73E8] transition">
+    Who we serve <FiChevronDown className="ml-1" />
+  </button>
+  <AnimatePresence>
+    {activeMenu === "solutions" && (
+      <motion.div
+        {...dropdownMotion}
+        className="absolute left-0 top-12 w-[600px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden flex"
+      >
+        {/* Left Sidebar */}
+        <div className="w-48 border-r bg-gray-50">
+          {[
+            { label: "BFSI", icon: <RiBankFill className="w-4 h-4" /> },
+            { label: "Retail", icon: <MdStorefront className="w-4 h-4" /> },
+            { label: "Travel", icon: <MdTravelExplore className="w-4 h-4" /> },
+            { label: "Digital Native", icon: <FaUsers className="w-4 h-4" /> },
+          ].map((item) => (
+            <div
+              key={item.label}
+              onMouseEnter={() => setMobileSubMenu(item.label)}
+              className={`flex items-center gap-2 px-4 py-3 cursor-pointer transition-all ${
+                mobileSubMenu === item.label
+                  ? "bg-blue-100 text-blue-600 font-medium"
+                  : "hover:bg-gray-100 text-gray-700"
+              }`}
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Right Panel */}
+        <div className="flex-1 p-6 bg-blue-50">
+          <h4 className="font-semibold text-gray-800 mb-3">
+            Explore More in {mobileSubMenu || "BFSI"}
+          </h4>
+          <ul className="space-y-3 text-gray-700">
+            {mobileSubMenu === "Retail" && (
+              <>
+                <li>Fashion & Apparel</li>
+                <li>Consumer Goods</li>
+                <li>E-commerce</li>
+              </>
+            )}
+            {mobileSubMenu === "Travel" && (
+              <>
+                <li>Airlines</li>
+                <li>Hotels</li>
+                <li>Tourism</li>
+              </>
+            )}
+            {mobileSubMenu === "Digital Native" && (
+              <>
+                <li>Startups</li>
+                <li>SaaS Platforms</li>
+                <li>Marketplaces</li>
+              </>
+            )}
+            {!mobileSubMenu || mobileSubMenu === "BFSI" ? (
+              <>
+                <li>Retail & Corporate Banking</li>
+                <li>Lending</li>
+                <li>Trading</li>
+              </>
+            ) : null}
+          </ul>
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
 
           {/* Other Menus */}
           <Link to="/pricing" className="hover:text-[#1A73E8] transition">
@@ -252,101 +283,149 @@ export default function Navbar() {
             className="lg:hidden bg-white/95 backdrop-blur-xl shadow-lg px-6 py-4 space-y-4"
           >
             {/* Products */}
-            <div>
-              <button
-                className="flex items-center justify-between w-full font-medium hover:text-[#1A73E8] transition"
-                onClick={() =>
-                  setMobileSubMenu(
-                    mobileSubMenu === "products" ? null : "products"
-                  )
-                }
-              >
-                Products <FiChevronDown />
-              </button>
-              <AnimatePresence>
-                {mobileSubMenu === "products" && (
-                  <motion.div {...dropdownMotion} className="pl-4 mt-2 space-y-3">
-                    {/* RevOps */}
-                    <div>
-                      <h4 className="text-gray-500 text-sm font-semibold">
-                        RevOps Hub
-                      </h4>
-                      <ul className="space-y-2 mt-1">
-                        <li className="flex items-center gap-2">
-                          <FaBox /> <span>AdSuitePro</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <FaUsers /> <span>DemoDesk</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <FaUsers /> <span>SalesHub</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* CXOps */}
-                    <div>
-                      <h4 className="text-gray-500 text-sm font-semibold">
-                        CXOps Hub
-                      </h4>
-                      <ul className="space-y-2 mt-1">
-                        <li className="flex items-center gap-2">
-                          <FaCogs /> <span>OnBoard</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <FaLifeRing /> <span>HelpDesk</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <FaUsers /> <span>Dexy</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <FaUsers /> <span>AnswerPro</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <FaUsers /> <span>AccountCore</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* TeamOps */}
-                    <div>
-                      <h4 className="text-gray-500 text-sm font-semibold">
-                        TeamOps Hub
-                      </h4>
-                      <ul className="space-y-2 mt-1">
-                        <li className="flex items-center gap-2">
-                          <FaCogs /> <span>ProductPro</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <FaCogs /> <span>DocCore</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <FaCogs /> <span>StriBoard</span>
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <FaCogs /> <span>TalentPulse</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    {/* Promo Card (Mobile) */}
-                    <div className="bg-gray-50 rounded-xl p-4 mt-4 shadow flex flex-col">
-                      <h4 className="text-base font-semibold text-gray-900">
-                        Experience the age of AI-powered customer support.
-                      </h4>
-                      <p className="mt-2 text-sm text-gray-600">
-                        With Dexy, our GPT-4 powered assistant, your support,
-                        sales, and success teams can resolve issues faster and
-                        delight customers.
-                      </p>
-                      <button className="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                        Get Started
-                      </button>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+           {/* Products */}
+<div
+  className="relative group"
+  onMouseEnter={() => setActiveMenu("products")}
+  onMouseLeave={() => setActiveMenu(null)}
+>
+  <button className="flex items-center hover:text-[#1A73E8] transition">
+    Products <FiChevronDown className="ml-1" />
+  </button>
+  <AnimatePresence>
+    {activeMenu === "products" && (
+      <motion.div
+        {...dropdownMotion}
+        className="absolute left-0 top-12 w-[1000px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl p-8 flex gap-8"
+      >
+        {/* ==== LEFT SIDE (Products List) ==== */}
+        <div className="flex-1 flex flex-col gap-8">
+          {/* RevOps Hub */}
+          <div>
+            <h4 className="text-gray-400 text-sm font-semibold mb-3">RevOps Hub</h4>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaBox className="mt-1" />
+                <div>
+                  <p className="font-medium">AdSuite</p>
+                  <p className="text-xs text-gray-500">Plan, launch, and manage campaigns across channels</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaUsers className="mt-1" />
+                <div>
+                  <p className="font-medium">DemoDesk</p>
+                  <p className="text-xs text-gray-500">Centralized hub for leads</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaUsers className="mt-1" />
+                <div>
+                  <p className="font-medium">SalesHub</p>
+                  <p className="text-xs text-gray-500">Plan, launch, and manage campaigns across channels</p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          {/* CXOps Hub */}
+          <div>
+            <h4 className="text-gray-400 text-sm font-semibold mb-3">CXOps Hub</h4>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaCogs className="mt-1" />
+                <div>
+                  <p className="font-medium">OnBoard</p>
+                  <p className="text-xs text-gray-500">Plan, launch, and manage campaigns</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaLifeRing className="mt-1" />
+                <div>
+                  <p className="font-medium">HelpDesk</p>
+                  <p className="text-xs text-gray-500">Centralized hub for leads</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaUsers className="mt-1" />
+                <div>
+                  <p className="font-medium">Dexy</p>
+                  <p className="text-xs text-gray-500">AI-powered customer support</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaUsers className="mt-1" />
+                <div>
+                  <p className="font-medium">AnswerPro</p>
+                  <p className="text-xs text-gray-500">Manage campaigns across channels</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaUsers className="mt-1" />
+                <div>
+                  <p className="font-medium">AccountCare</p>
+                  <p className="text-xs text-gray-500">Centralized hub for leads</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* TeamOps Hub */}
+          <div>
+            <h4 className="text-gray-400 text-sm font-semibold mb-3">TeamOps Hub</h4>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaCogs className="mt-1" />
+                <div>
+                  <p className="font-medium">ProductPro</p>
+                  <p className="text-xs text-gray-500">Manage campaigns across channels</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaCogs className="mt-1" />
+                <div>
+                  <p className="font-medium">DevCore</p>
+                  <p className="text-xs text-gray-500">Centralized hub for leads</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaCogs className="mt-1" />
+                <div>
+                  <p className="font-medium">StarBoard</p>
+                  <p className="text-xs text-gray-500">Manage campaigns across channels</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
+                <FaCogs className="mt-1" />
+                <div>
+                  <p className="font-medium">TalentPulse</p>
+                  <p className="text-xs text-gray-500">Manage campaigns across channels</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ==== RIGHT SIDE (Promo Card) ==== */}
+        <div className="w-72 bg-black text-white rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <h4 className="text-lg font-semibold">
+              Experience the age of AI-powered customer support.
+            </h4>
+            <p className="mt-3 text-sm text-gray-300 leading-relaxed">
+              With Dexy, our GPT-4o powered chatbot, a new internal support Copilot 
+              for your agents, in-app bug reporting, product roadmaps, surveys & marketing automations.
+            </p>
+          </div>
+          <button className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            Get Started
+          </button>
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
 
             {/* Solutions */}
             <div>
