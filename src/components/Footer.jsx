@@ -45,7 +45,7 @@ const ReviewsAndFooter = () => {
         >
           <path
             d="M0,0 C300,100 900,0 1200,80 L1200,0 L0,0 Z"
-            fill="oklch(88.2% 0.059 254.128)"
+            // fill="oklch(88.2% 0.059 254.128)"
           ></path>
         </svg>
       </div>
