@@ -247,7 +247,10 @@ const ReviewsAndFooter = () => {
 
   {/* Right side (form) */}
   <div className="w-full md:w-1/3 mt-6 md:mt-0">
-<form className="flex max-w-xl w-full bg-white rounded-full shadow relative md:ml-2">
+<form
+  id="subscribe-bar"
+  className="flex max-w-xl w-full bg-white rounded-full shadow relative md:ml-2"
+>
   <input
     type="email"
     placeholder="What's your e-mail?"
@@ -271,6 +274,7 @@ const ReviewsAndFooter = () => {
     </svg>
   </button>
 </form>
+
 
 
 

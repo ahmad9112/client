@@ -45,7 +45,7 @@ export default function OnboardingFeaturesSection() {
         {features.map((item, i) => (
           <div
             key={i}
-            className="bg-blue-200 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow"
+            className="bg-blue-200 rounded-2xl p-6 sm:p-8 flex flex-col justify-between "
           >
             <div>
               <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
@@ -62,7 +62,7 @@ export default function OnboardingFeaturesSection() {
               <img
                 src={item.img}
                 alt={item.title}
-                className="rounded-lg shadow w-44 h-44 sm:w-60 sm:h-60 md:w-72 md:h-72 object-contain"
+                className="rounded-lg  w-44 h-44 sm:w-60 sm:h-60 md:w-72 md:h-72 object-contain"
               />
             </div>
           </div>

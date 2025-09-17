@@ -29,7 +29,7 @@ function App() {
             <>
               <PricingPage />
               <PricingPlans />
-              <StartupOffer />
+              {/* <StartupOffer /> */}
               <Testimonials />
               <FAQ />
               <ImpactMetrics />

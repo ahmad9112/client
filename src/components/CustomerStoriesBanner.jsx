@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import et from "../assets/et.png"; // replace with your actual image path
 
 // Import images
-import hiringImg from "../assets/hiring.png";
-import payrollImg from "../assets/payroll.png";
-import complianceImg from "../assets/compliance.png";
-import relocationImg from "../assets/relocation.png";
-import mergersImg from "../assets/mergers.png";
+import hiringImg from "../assets/hiringg.png";
+import payrollImg from "../assets/payrolll.png";
+import complianceImg from "../assets/compliancee.png";
+import relocationImg from "../assets/relocationn.png";
+import mergersImg from "../assets/mergerss.png";
 
 // Tabs Data for Customer Stories
 const tabsData = {

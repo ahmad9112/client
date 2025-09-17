@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useMemo } from "react";
 import Form from "../Form";
+import StartupOffer from "./StartupOffer";
 
 // ✅ Tabs (constants)
 const TABS = {
@@ -1152,12 +1153,14 @@ const PricingPage = () => {
     }
 
     return (
-      <div>
+      <div className="grid grid-cols-2 ">
         <h1 className="text-2xl font-bold mb-4">{activeTab}</h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 mb-10 ">
           Content for <b>{activeTab}</b> goes here.
         </p>
+        <StartupOffer />
         <Form />
+        
       </div>
     );
   };

@@ -253,9 +253,18 @@ export default function Navbar() {
 
         {/* Desktop Auth */}
         <div className="hidden md:flex items-center space-x-4">
-          <button className="px-4 py-2 border border-black text-black rounded-full font-medium hover:bg-gray-100 transition">
-            Log in
-          </button>
+         <button
+  className="px-4 py-2 border border-black text-black rounded-full font-medium hover:bg-gray-100 transition"
+  onClick={() => {
+    const subscribeSection = document.getElementById("subscribe-bar");
+    if (subscribeSection) {
+      subscribeSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
+  Subscribe
+</button>
+
           <a
             href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
             target="_blank"
