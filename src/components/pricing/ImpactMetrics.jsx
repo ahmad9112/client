@@ -37,9 +37,14 @@ export default function ImpactMetrics() {
 
         {/* CTA */}
         <div>
-          <button className="mt-6 px-6 py-3 bg-black text-white rounded-full text-lg font-medium hover:bg-gray-800 transition">
+          <a
+            href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-6 px-6 py-3 bg-black text-white rounded-full text-lg font-medium hover:bg-gray-800 transition"
+          >
             Book a Demo
-          </button>
+          </a>
         </div>
       </div>
     </section>

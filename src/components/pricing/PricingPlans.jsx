@@ -204,7 +204,7 @@ const renderSalesHubPricing = () => (
     <h1 className="text-2xl font-bold mb-6">SalesHub Pricing</h1>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
       {/* Starter */}
-      <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-md">
+      <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
         <h2 className="text-xl font-semibold mb-2">Starter</h2>
         <p className="text-gray-500 mb-4">Ideal for startups and small sales teams</p>
         <p className="text-3xl font-bold mb-6">$19<span className="text-base font-normal">/user/month</span></p>
@@ -214,12 +214,11 @@ const renderSalesHubPricing = () => (
           <li>✔ 1 integration (e.g., Slack)</li>
           <li>✔ Standard reporting</li>
         </ul>
-        <button className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg w-full">
-          Get started free
-        </button>
+        <button className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700 transition">Get started free</button>
       </div>
+
       {/* Growth */}
-      <div className="flex flex-col border rounded-lg p-6 shadow-lg hover:shadow-xl">
+      <div className="flex flex-col border rounded-lg p-6 shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
         <h2 className="text-xl font-semibold mb-2">Growth <span className="text-sm text-green-600">(Most Popular)</span></h2>
         <p className="text-gray-500 mb-4">For scaling sales teams needing automation & insights</p>
         <p className="text-3xl font-bold mb-6">$49<span className="text-base font-normal">/user/month</span></p>
@@ -231,12 +230,11 @@ const renderSalesHubPricing = () => (
           <li>✔ CRM integrations (HubSpot, Salesforce)</li>
           <li>✔ Team collaboration tools</li>
         </ul>
-        <button className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg w-full">
-          Get started free
-        </button>
+        <button className="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-700 transition">Get started free</button>
       </div>
+
       {/* Enterprise */}
-      <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-md">
+      <div className="flex flex-col border rounded-lg p-6 shadow hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
         <h2 className="text-xl font-semibold mb-2">Enterprise</h2>
         <p className="text-gray-500 mb-4">Large/global sales orgs with complex workflows</p>
         <p className="text-3xl font-bold mb-6">Let's talk</p>
@@ -250,11 +248,10 @@ const renderSalesHubPricing = () => (
           <li>✔ Custom API & workflow automation</li>
           <li>✔ Dedicated success manager + 24/7 support</li>
         </ul>
-        <button className="mt-6 bg-gray-800 text-white px-4 py-2 rounded-lg w-full">
-          Book a demo
-        </button>
+        <button className="mt-6 bg-gray-800 text-white px-4 py-2 rounded-lg w-full hover:bg-gray-900 transition">Book a demo</button>
       </div>
     </div>
+
     {/* Feature Comparison Table */}
     <div className="overflow-x-auto">
       <table className="min-w-full border border-gray-200 rounded-lg">
@@ -267,83 +264,36 @@ const renderSalesHubPricing = () => (
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="p-3 border">Lead & contact mgmt</td>
-            <td className="p-3 border text-center">Basic</td>
-            <td className="p-3 border text-center">Full</td>
-            <td className="p-3 border text-center">Full</td>
-          </tr>
-          <tr className="bg-gray-50">
-            <td className="p-3 border">Visual pipeline & deal mgmt</td>
-            <td className="p-3 border text-center">1 pipeline</td>
-            <td className="p-3 border text-center">Multi-pipeline</td>
-            <td className="p-3 border text-center">Unlimited + custom fields</td>
-          </tr>
-          <tr>
-            <td className="p-3 border">Task automation</td>
-            <td className="p-3 border text-center">Basic</td>
-            <td className="p-3 border text-center">Advanced</td>
-            <td className="p-3 border text-center">Advanced + custom workflows</td>
-          </tr>
-          <tr className="bg-gray-50">
-            <td className="p-3 border">Email templates</td>
-            <td className="p-3 border text-center">Limited</td>
-            <td className="p-3 border text-center">Full</td>
-            <td className="p-3 border text-center">Advanced + personalization</td>
-          </tr>
-          <tr>
-            <td className="p-3 border">All lead scoring</td>
-            <td className="p-3 border text-center">Basic</td>
-            <td className="p-3 border text-center">Full</td>
-            <td className="p-3 border text-center">Advanced + forecasting</td>
-          </tr>
-          <tr className="bg-gray-50">
-            <td className="p-3 border">Sales forecasting</td>
-            <td className="p-3 border text-center">Basic</td>
-            <td className="p-3 border text-center">Basic</td>
-            <td className="p-3 border text-center">Advanced</td>
-          </tr>
-          <tr>
-            <td className="p-3 border">Team collaboration</td>
-            <td className="p-3 border text-center">Notes</td>
-            <td className="p-3 border text-center">Handoff</td>
-            <td className="p-3 border text-center">Deal rooms + advanced</td>
-          </tr>
-          <tr className="bg-gray-50">
-            <td className="p-3 border">Reports & dashboards</td>
-            <td className="p-3 border text-center">Standard</td>
-            <td className="p-3 border text-center">Advanced</td>
-            <td className="p-3 border text-center">Custom + scheduled</td>
-          </tr>
-          <tr>
-            <td className="p-3 border">Integrations</td>
-            <td className="p-3 border text-center">1</td>
-            <td className="p-3 border text-center">Popular apps</td>
-            <td className="p-3 border text-center">Full + API</td>
-          </tr>
-          <tr className="bg-gray-50">
-            <td className="p-3 border">Role-based permissions</td>
-            <td className="p-3 border text-center">✘</td>
-            <td className="p-3 border text-center">✘</td>
-            <td className="p-3 border text-center">✔</td>
-          </tr>
-          <tr>
-            <td className="p-3 border">Security & compliance</td>
-            <td className="p-3 border text-center">✘</td>
-            <td className="p-3 border text-center">✘</td>
-            <td className="p-3 border text-center">SSO, SOC2, GDPR</td>
-          </tr>
-          <tr className="bg-gray-50">
-            <td className="p-3 border">Dedicated success manager</td>
-            <td className="p-3 border text-center">✘</td>
-            <td className="p-3 border text-center">✘</td>
-            <td className="p-3 border text-center">✔</td>
-          </tr>
+          {[
+            ["Lead & contact mgmt", "Basic", "Full", "Full"],
+            ["Visual pipeline & deal mgmt", "1 pipeline", "Multi-pipeline", "Unlimited + custom fields"],
+            ["Task automation", "Basic", "Advanced", "Advanced + custom workflows"],
+            ["Email templates", "Limited", "Full", "Advanced + personalization"],
+            ["All lead scoring", "Basic", "Full", "Advanced + forecasting"],
+            ["Sales forecasting", "Basic", "Basic", "Advanced"],
+            ["Team collaboration", "Notes", "Handoff", "Deal rooms + advanced"],
+            ["Reports & dashboards", "Standard", "Advanced", "Custom + scheduled"],
+            ["Integrations", "1", "Popular apps", "Full + API"],
+            ["Role-based permissions", "✘", "✘", "✔"],
+            ["Security & compliance", "✘", "✘", "SSO, SOC2, GDPR"],
+            ["Dedicated success manager", "✘", "✘", "✔"]
+          ].map((row, i) => (
+            <tr
+              key={i}
+              className={`transition duration-300 ease-in-out hover:bg-blue-50 hover:scale-[1.01] ${i % 2 === 1 ? "bg-gray-50" : ""}`}
+            >
+              <td className="p-3 border">{row[0]}</td>
+              <td className="p-3 border text-center">{row[1]}</td>
+              <td className="p-3 border text-center">{row[2]}</td>
+              <td className="p-3 border text-center">{row[3]}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
   </div>
 );
+
 const renderHelpDeskPricing = () => (
   <div>
     <h1 className="text-2xl font-bold mb-6">HelpDesk Pricing</h1>
