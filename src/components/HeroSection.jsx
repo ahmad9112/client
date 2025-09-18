@@ -65,7 +65,7 @@ export default function HeroSection() {
 
             <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
               Manage customer health, renewals, and growth with AccountCare.
-              Deliver faster resolutions with AI-powered HelpDesk. Ask Dexy —
+              Deliver faster resolutions with AI-native HelpDesk. Ask Dexy —
               your OrgGPT for instant knowledge & sentiment insights. Boost
               employee engagement with StarBoard kudos & rewards. Unify RevOps,
               CXOps, and TeamOps into one connected platform.
@@ -175,7 +175,7 @@ export default function HeroSection() {
       {/* White Section */}
       <div className="bg-[#FFFCF5] py-10 sm:py-12 md:py-16 text-center px-4">
         <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-snug sm:leading-tight tracking-tight font-satoshi max-w-3xl mx-auto">
-          DexKor is your AI-powered Suite for Pre & Post-Sales Success.
+          DexKor is your AI-native Suite for Pre & Post-Sales Success.
         </h2>
       </div>
     </section>

@@ -1,4 +1,5 @@
 "use client";
+
 import g from "../assets/g.png";
 import h from "../assets/h.png";
 import i from "../assets/i.png";
@@ -60,6 +61,7 @@ export default function SalesHubSection() {
             {/* Layout alternate */}
             {item.layout === "text-first" ? (
               <>
+                {/* Text */}
                 <div
                   className={`relative z-10 ${
                     item.centerBtn ? "flex flex-col items-center text-center" : ""
@@ -75,23 +77,28 @@ export default function SalesHubSection() {
                     Learn more
                   </button>
                 </div>
+
+                {/* Image */}
                 <div className="mt-4 sm:mt-6 relative z-10 flex justify-center">
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="rounded-lg w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 object-contain"
+                    className="w-full h-auto rounded-lg shadow object-contain"
                   />
                 </div>
               </>
             ) : (
               <>
+                {/* Image */}
                 <div className="mb-4 sm:mb-6 relative z-10 flex justify-center">
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="rounded-lg w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 object-contain"
+                    className="w-full h-auto rounded-lg shadow object-contain"
                   />
                 </div>
+
+                {/* Text */}
                 <div
                   className={`relative z-10 ${
                     item.centerBtn ? "flex flex-col items-center text-center" : ""

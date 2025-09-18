@@ -27,13 +27,13 @@ export default function ComplianceHero() {
         {/* Section Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-28 md:pt-36 max-w-4xl mx-auto">
           <p className="text-xs md:text-sm uppercase tracking-widest text-gray-300 mb-2">
-           AI-POWERED SUCCESS PLATFORM
+           AI-NATIVE SUCCESS PLATFORM
           </p>
           <h1 className="text-2xl md:text-4xl font-bold leading-snug mb-4">
            Unlock Intelligent Customer  <br /> Success™ with Dexy AI<br /> 
           </h1>
           <p className="text-lg md:text text-gray-300 mb-6">
-      Stay ahead of customer needs with DexKor’s AI-powered intelligence layer. Dexy AI helps your teams detect churn risks, generate insights, and automate repetitive tasks — giving you proactive control over Success, Support, and RevOps in one place.
+      Stay ahead of customer needs with DexKor’s AI-native intelligence layer. Dexy AI helps your teams detect churn risks, generate insights, and automate repetitive tasks — giving you proactive control over Success, Support, and RevOps in one place.
 
           </p>
           <button className="bg-white text-black font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition">
