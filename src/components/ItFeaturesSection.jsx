@@ -62,7 +62,7 @@ export default function OnboardingFeaturesSection() {
               <img
                 src={item.img}
                 alt={item.title}
-                className="rounded-lg  w-44 h-44 sm:w-60 sm:h-60 md:w-72 md:h-72 object-contain"
+                className="w-full h-auto rounded-lg shadow object-contain"
               />
             </div>
           </div>

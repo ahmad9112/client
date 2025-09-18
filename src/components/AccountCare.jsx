@@ -61,7 +61,7 @@ export default function CustomerSuccessSection() {
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-72 h-72 md:w-80 md:h-80 object-contain"
+                className="w-full h-auto rounded-lg shadow object-contain"
               />
             </div>
           </div>

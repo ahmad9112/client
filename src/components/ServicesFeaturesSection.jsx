@@ -61,7 +61,7 @@ export default function SupportFeaturesSection() {
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-48 h-48 sm:w-72 sm:h-72 md:w-80 md:h-80 object-contain"
+                className="w-full h-auto rounded-lg shadow object-contain"
               />
             </div>
           </div>
