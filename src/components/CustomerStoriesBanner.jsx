@@ -26,12 +26,12 @@ const tabsData = {
     desc: "“DexKor’s HelpDesk gave us SLA tracking and AI summaries out of the box. Our support costs dropped by 30% and agents save hours every week.” — Arjun K., Operations Manager",
   },
   "AccountCare": {
-    img: relocationImg,
+    img:mergersImg,
     stat: "💚 AccountCare – Mid-market SaaS",
     desc: "“We can see risks before they become churn. Health scores and alerts helped us retain two major accounts this quarter alone.” — Emily R., Head of CS",
   },
   "Dexy AI": {
-    img: mergersImg,
+    img: relocationImg,
     stat: "🖤 Dexy AI – D2C Brand",
     desc: "“Ask Dexy has become our internal copilot. From auto-QA to instant summaries, it’s like having an extra analyst on the team.” — Karan P., Founder & CEO",
   },

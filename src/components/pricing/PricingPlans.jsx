@@ -861,6 +861,22 @@ const renderDexyAIPricing = () => (
     </div>
   </div>
 );
+
+const commonProgramsComponent = () => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    {/* Left Side - Startup Offer */}
+    <div>
+      <StartupOffer />
+    </div>
+
+    {/* Right Side - Form */}
+    <div>
+      <Form />
+    </div>
+  </div>
+);
+
+
 const renderStarboardPricing = () => (
   <div>
     <h1 className="text-2xl font-bold mb-6">Starboard Pricing</h1>
@@ -1067,13 +1083,22 @@ const PricingPage = () => {
           { key: TABS.WORKFLOW_AUTOMATION, label: "Workflow Automation" },
         ],
       },
+{
+    title: "Programs",
+    items: [
       {
-        title: "Programs",
-        items: [
-          { key: TABS.DEXKOR_FOR_STARTUPS, label: "Dexkor for Startups" },
-          { key: TABS.EARLY_ADOPTER_PROGRAM, label: "Early Adopter Program" },
-        ],
+        key: TABS.DEXKOR_FOR_STARTUPS,
+        label: "Dexkor for Startups",
+        component: commonProgramsComponent,
       },
+      {
+        key: TABS.EARLY_ADOPTER_PROGRAM,
+        label: "Early Adopter Program",
+        component: commonProgramsComponent,
+      },
+    ],
+  },
+
     ],
     []
   );
@@ -1101,6 +1126,12 @@ const PricingPage = () => {
     if (activeTab === TABS.STARBOARD) {
       return renderStarboardPricing();
     }
+ if (
+    activeTab === TABS.DEXKOR_FOR_STARTUPS ||
+    activeTab === TABS.EARLY_ADOPTER_PROGRAM
+  ) {
+    return commonProgramsComponent();
+  }
 
     return (
       <div className="grid grid-cols-2 ">
@@ -1108,8 +1139,7 @@ const PricingPage = () => {
         <p className="text-gray-600 mb-10 ">
           Content for <b>{activeTab}</b> goes here.
         </p>
-        <StartupOffer />
-        <Form />
+       <Form />
         
       </div>
     );

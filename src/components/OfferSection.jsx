@@ -36,11 +36,14 @@ export default function OfferSection() {
               <p className="text-gray-700 mb-6 text-sm sm:text-base">
                 Chat with your organizational data for instant answers.
               </p>
+              {/* ✅ Get More Button */}
               <a
-                href="/features/ask-dexy"
+                href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-black text-white px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition inline-block text-sm sm:text-base"
               >
-                Learn more
+                Get more
               </a>
             </div>
           </div>
@@ -52,11 +55,14 @@ export default function OfferSection() {
               <p className="text-gray-700 mb-6 text-sm sm:text-base">
                 AI audits of tickets, chats, and processes.
               </p>
+              {/* ✅ Get More Button */}
               <a
-                href="/features/auto-qa"
+                href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-black text-white px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition inline-block text-sm sm:text-base"
               >
-                Learn more
+                Get more
               </a>
             </div>
             <div className="mt-6 sm:mt-8">
@@ -87,11 +93,14 @@ export default function OfferSection() {
               <p className="text-gray-700 mb-6 text-sm sm:text-base">
                 Auto-generate summaries and tag interactions.
               </p>
+              {/* ✅ Get More Button */}
               <a
-                href="/features/summaries"
+                href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-black text-white px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition inline-block text-sm sm:text-base"
               >
-                Learn more
+                Get more
               </a>
             </div>
           </div>
@@ -105,11 +114,14 @@ export default function OfferSection() {
               <p className="text-gray-700 mb-6 text-sm sm:text-base">
                 Measure customer and employee sentiment at scale.
               </p>
+              {/* ✅ Get More Button */}
               <a
-                href="/features/sentiment-analysis"
+                href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-black text-white px-4 sm:px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition inline-block text-sm sm:text-base"
               >
-                Learn more
+                Get more
               </a>
             </div>
             <div className="mt-6 sm:mt-8">

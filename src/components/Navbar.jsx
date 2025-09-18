@@ -5,6 +5,7 @@ import { FaBox, FaUsers, FaCogs, FaLifeRing } from "react-icons/fa";
 import { MdTravelExplore, MdStorefront } from "react-icons/md";
 import { RiBankFill } from "react-icons/ri";
 import { AnimatePresence, motion } from "framer-motion";
+
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -67,96 +68,182 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-8 text-gray-800 font-medium relative">
           {/* Products */}
-       {/* Products */}
-<div
-  className="relative group"
-  onMouseEnter={() => setActiveMenu("products")}
-  onMouseLeave={() => setActiveMenu(null)}
->
-  <button className="flex items-center hover:text-[#1A73E8] transition">
+      {/* Products */}
+          <div className="relative"> {/* ✅ Full navbar item wrapper */}
+  <button
+    onClick={() =>
+      setActiveMenu(activeMenu === "products" ? null : "products")
+    }
+    className="flex items-center hover:text-[#1A73E8] transition"
+  >
     Products <FiChevronDown className="ml-1" />
   </button>
+
   <AnimatePresence>
     {activeMenu === "products" && (
       <motion.div
         {...dropdownMotion}
-        className="absolute left-0 top-12 w-[900px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl p-6 flex flex-col gap-6"
+        className="absolute left-1/2 -translate-x-1/2 ml-70 top-full mt-2
+                   w-[90vw] max-w-[1100px]
+                   bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl p-8
+                   grid grid-cols-4 gap-8 z-50"
       >
-        {/* RevOps Hub */}
-        <div>
-          <h4 className="text-gray-400 text-sm font-semibold mb-3">RevOps Hub</h4>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaBox /> <div><p className="font-medium">AdSuite</p><p className="text-xs text-gray-500">Plan, launch, and manage campaigns across channels</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaUsers /> <div><p className="font-medium">DemoDesk</p><p className="text-xs text-gray-500">Centralized hub for leads</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaUsers /> <div><p className="font-medium">SalesHub</p><p className="text-xs text-gray-500">Plan, launch, and manage campaigns across channels</p></div>
-            </div>
+                  {/* Col 1 - RevOps Hub */}
+                  <div>
+                    <h4 className="text-gray-400 text-sm font-semibold mb-4">
+                      RevOps Hub
+                    </h4>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaBox className="mt-1" />
+                        <div>
+                          <p className="font-medium">AdSuite</p>
+                          <p className="text-xs text-gray-500">
+                            Plan, launch, and manage campaigns across channels
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaUsers className="mt-1" />
+                        <div>
+                          <p className="font-medium">DemoDesk</p>
+                          <p className="text-xs text-gray-500">
+                            Centralized hub for leads
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaUsers className="mt-1" />
+                        <div>
+                          <p className="font-medium">SalesHub</p>
+                          <p className="text-xs text-gray-500">
+                            Plan, launch, and manage campaigns across channels
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Col 2 - CXOps Hub */}
+                  <div>
+                    <h4 className="text-gray-400 text-sm font-semibold mb-4">
+                      CXOps Hub
+                    </h4>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaCogs className="mt-1" />
+                        <div>
+                          <p className="font-medium">OnBoard</p>
+                          <p className="text-xs text-gray-500">
+                            Plan, launch, and manage campaigns
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaLifeRing className="mt-1" />
+                        <div>
+                          <p className="font-medium">HelpDesk</p>
+                          <p className="text-xs text-gray-500">
+                            Centralized hub for leads
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaUsers className="mt-1" />
+                        <div>
+                          <p className="font-medium">Dexy</p>
+                          <p className="text-xs text-gray-500">
+                            AI-powered customer support
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaUsers className="mt-1" />
+                        <div>
+                          <p className="font-medium">AnswerPro</p>
+                          <p className="text-xs text-gray-500">
+                            Manage campaigns across channels
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaUsers className="mt-1" />
+                        <div>
+                          <p className="font-medium">AccountCare</p>
+                          <p className="text-xs text-gray-500">
+                            Centralized hub for leads
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Col 3 - TeamOps Hub */}
+                  <div>
+                    <h4 className="text-gray-400 text-sm font-semibold mb-4">
+                      TeamOps Hub
+                    </h4>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaCogs className="mt-1" />
+                        <div>
+                          <p className="font-medium">ProductPro</p>
+                          <p className="text-xs text-gray-500">
+                            Manage campaigns across channels
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaCogs className="mt-1" />
+                        <div>
+                          <p className="font-medium">DevCore</p>
+                          <p className="text-xs text-gray-500">
+                            Centralized hub for leads
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaCogs className="mt-1" />
+                        <div>
+                          <p className="font-medium">StarBoard</p>
+                          <p className="text-xs text-gray-500">
+                            Manage campaigns across channels
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 cursor-pointer hover:text-[#1A73E8]">
+                        <FaCogs className="mt-1" />
+                        <div>
+                          <p className="font-medium">TalentPulse</p>
+                          <p className="text-xs text-gray-500">
+                            Manage campaigns across channels
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Col 4 - Promo Card */}
+                  <div className="bg-[#111827] text-white rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">
+                        Experience the age of AI-powered customer support.
+                      </h3>
+                      <p className="text-sm text-gray-300">
+                        With Dexy, our GPT-4o powered chatbot, a new internal
+                        support Copilot for your agents, in-app bug reporting,
+                        product roadmaps, knowledge bases, surveys and marketing
+                        automations.
+                      </p>
+                    </div>
+                    <button className="mt-4 px-4 py-2 bg-[#1A73E8] hover:bg-[#1664C4] rounded-lg text-white font-medium transition">
+                      Get Started
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
-        </div>
-
-        {/* CXOps Hub */}
-        <div>
-          <h4 className="text-gray-400 text-sm font-semibold mb-3">CXOps Hub</h4>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaCogs /> <div><p className="font-medium">OnBoard</p><p className="text-xs text-gray-500">Plan, launch, and manage campaigns</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaLifeRing /> <div><p className="font-medium">HelpDesk</p><p className="text-xs text-gray-500">Centralized hub for leads</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaUsers /> <div><p className="font-medium">Dexy</p><p className="text-xs text-gray-500">AI-powered customer support</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaUsers /> <div><p className="font-medium">AnswerPro</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaUsers /> <div><p className="font-medium">AccountCare</p><p className="text-xs text-gray-500">Centralized hub for leads</p></div>
-            </div>
-          </div>
-        </div>
-
-        {/* TeamOps Hub */}
-        <div>
-          <h4 className="text-gray-400 text-sm font-semibold mb-3">TeamOps Hub</h4>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaCogs /> <div><p className="font-medium">ProductPro</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaCogs /> <div><p className="font-medium">DevCore</p><p className="text-xs text-gray-500">Centralized hub for leads</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaCogs /> <div><p className="font-medium">StarBoard</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaCogs /> <div><p className="font-medium">TalentPulse</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
-            </div>
-            <div className="flex items-start gap-2 cursor-pointer hover:text-[#1A73E8]">
-              <FaCogs /> <div><p className="font-medium">LearnHub</p><p className="text-xs text-gray-500">Manage campaigns across channels</p></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Promo Card */}
-        <div className="bg-black text-white rounded-xl p-5 flex flex-col justify-between">
-          <h4 className="text-lg font-semibold">Experience the age of AI-powered customer support.</h4>
-          <p className="mt-2 text-sm text-gray-300">
-            With Dexy, our GPT-4o powered chatbot, bug reporting, product roadmaps, surveys & marketing automations.
-          </p>
-          <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-            Get Started
-          </button>
-        </div>
-      </motion.div>
-    )}
-  </AnimatePresence>
-</div>
-
 
           {/* Who we serve */}
           {/* Who we serve */}
