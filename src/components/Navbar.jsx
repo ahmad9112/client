@@ -581,7 +581,7 @@ export default function Navbar() {
             {/* Auth */}
             <div className="flex flex-col space-y-3 pt-3">
               <button className="px-4 py-2 border border-[#1A73E8] text-[#1A73E8] rounded-full font-medium hover:bg-[#EAF3FF] transition">
-                Sign in
+                Subscribe
               </button>
               <a
                 href="https://cal.com/richard-samuel/let-s-talk-cx-saas-growth"
@@ -589,7 +589,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-gradient-to-r from-[#1A73E8] to-[#0B5ED7] text-white rounded-full font-medium hover:opacity-90 transition text-center"
               >
-                Book Demo
+                   Book a 30-min demo
               </a>
             </div>
           </motion.div>
