@@ -3,7 +3,7 @@ import zz from "../assets/zz.png"; // Adjust path if needed
 
 const ConnectedPlatformHero = () => {
   return (
-    <section className="relative min-h-screen bg-[#FFEBA6] text-gray-900 overflow-hidden flex items-center">
+    <section className="relative min-h-screen bg-[#FFEBA6] text-gray-900 overflow-hidden flex items-center  " >
       {/* Background Illustration */}
       <img
         src={zz}
@@ -12,7 +12,7 @@ const ConnectedPlatformHero = () => {
       />
 
       {/* Main Content aligned to left */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto pl-4 pr-4 sm:pl-6 sm:pr-6 md:pl-8 md:pr-6 lg:pl-12 lg:pr-6">
+      <div className="relative z-10 w-full max-w-6xl mx-auto pl-4 pr-4 sm:pl-6 sm:pr-6 md:pl-8 md:pr-6 lg:pl-12 lg:pr-6  ml-4 ">
         <div className="max-w-2xl text-left">
           {/* Small Upper Title */}
           <p className="text-xs sm:text-sm font-semibold tracking-wide uppercase mb-3">
@@ -25,7 +25,7 @@ const ConnectedPlatformHero = () => {
           </h1>
 
           {/* Subtext */}
-          <p className="text-sm sm:text-base md:text-lg text-gray-800 mb-6">
+          <p className="text-sm sm:text-base md:text-lg text-gray-800 mb-6   ">
             From sales to onboarding, customer support to renewals — DexKor covers
             the entire customer lifecycle. One connected platform, AI-powered at
             its core, helping teams across SaaS, D2C, and Logistics deliver
